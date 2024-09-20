@@ -1,0 +1,138 @@
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+// Define types for message
+type Message = {
+  text: string
+  name?: string
+  timeStamp: string
+  sender: "user" | "friend"
+}
+
+const newMessage = ref("")
+// Reactive list of messages
+const messages = ref<Message[]>([
+  {
+    text: "Hey! How are you?",
+    sender: "friend",
+    name: "Script",
+    timeStamp: "10:02",
+  },
+  {
+    text: "I am good, thanks! What about you?",
+    sender: "user",
+    name: "",
+    timeStamp: "10:02",
+  },
+  {
+    text: "I am very fine?",
+    sender: "friend",
+    name: "Bode Thomas",
+    timeStamp: "10:02",
+  },
+  {
+    text: "So, I have this bug i want to fix, are you free for  a quick call?",
+    sender: "friend",
+    name: "Transfer XO Rep ",
+    timeStamp: "10:02",
+  },
+])
+
+const sendMessage = () => {
+  if (newMessage.value.trim() !== "") {
+    messages.value.push({
+      text: newMessage.value,
+      sender: "user",
+      timeStamp: "just now",
+    })
+    newMessage.value = ""
+    // Simulate a friend reply
+    setTimeout(() => {
+      messages.value.push({
+        text: "That sounds great!",
+        sender: "friend",
+        timeStamp: "just now",
+        name: "TXO Operations",
+      })
+    }, 1000)
+  }
+}
+
+</script>
+
+<template>
+  <div class="relative w-full h-[580px] rounded-2xl mx-auto bg-white border overflow-hidden">
+    <div
+      class="absolute top-0 left-0 w-full py-4 z-1 px-[22px] bg-[#F5FDFF] rounded-t-2xl flex items-center justify-between">
+      <div class="space-y-1">
+        <h6 class="text-sm font-medium text-complimentary leading-5">
+          ArchyScript jekjekj
+        </h6>
+        <p class="flex items-center space-x-1">
+          <span class="h-1.5 w-1.5 rounded-full bg-warning inline-block">
+          </span>
+          <span class="text-[10px] font-medium text-[#626262] leading-[13px]">
+            Seen 3 hours ago
+          </span>
+        </p>
+      </div>
+
+      <a-button type="primary" shape="round" class="h-9"> Summon (3) </a-button>
+    </div>
+
+    <!-- Messages Section -->
+    <div class="px-4 pt-24 pb-28 h-full overflow-y-auto space-y-2">
+      <div v-for="(message, index) in messages" :key="index"
+        :class="message.sender === 'user' ? 'text-right' : 'text-left'">
+        <div class="relative inline-block px-4 py-2.5 bg-[#F9F9F9] text-[#323232] text-sm rounded-md mb-2 max-w-3/5">
+          <span v-if="message.sender === 'friend'" class="inline-block text-warning text-sm">
+            {{ message.name }}
+          </span>
+
+          <p>
+            {{ message.text }}
+          </p>
+
+          <!-- chat pointer -->
+          <template v-if="message.sender === 'user'">
+            <Icon name="chat-pointer-user" class="absolute -bottom-1 -right-1" />
+          </template>
+
+          <template v-else>
+            <Icon name="chat-pointer-others" class="absolute -bottom-1 -left-1" />
+          </template>
+        </div>
+
+        <p class="flex items-center -mt-1" :class="message.sender === 'user' && 'flex-row-reverse'">
+          <Icon name="check-double" />
+
+          <span class="text-[11px] font-medium text-[#3C3C4399] leading-[13px] px-2">
+            {{ message.timeStamp }}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Input Section -->
+    <div class="absolute bottom-0 left-0 w-full h-[88px] mt-4 bg-white z-1 border-t pt-3.5 px-6 rounded-b-2xl">
+      <div class="flex items-center space-x-2 bg-white border p-2 pl-3 rounded-xl">
+        <!-- Attatchment icon -->
+        <span class="h-6 w-6 rounded-sm bg-[#F5FDFF] flex items-center justify-center">
+          <Icon name="attach" />
+        </span>
+
+        <!-- message field -->
+        <input v-model="newMessage" type="text" placeholder="Type your message..."
+          class="flex-grow px-4 py-2 border-none focus:outline-none focus:border-none" />
+
+        <!-- send btn -->
+        <button @click="sendMessage">
+          sensd
+          <Icon name="messages-send" class="!text-white" />
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped></style>
