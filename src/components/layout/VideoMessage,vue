@@ -1,0 +1,12 @@
+<template>
+  <ReactPlayer :url="message.content" width="250px" height="250px" controls light />
+</template>
+
+<script setup>
+import { defineProps } from 'vue';
+import ReactPlayer from 'react-player';
+
+const props = defineProps({
+  message: Object
+});
+</script>

@@ -1,26 +1,32 @@
 <script setup lang="ts">
-import ChatsPage from '../components/Chats/index.vue'
- 
-// socket.on('connect', () => {
-//     console.log('Connected to server');
-// });
+import { MessageSquare } from 'lucide-vue-next';
+import SideBar from '../components/layout/SideBar.vue'
+import LeftPanel from '../components/layout/LeftPanel.vue'
+import RightPanel from '../components/layout/RightPanel.vue'
+// <ChatsPage />
 
-// Listen for messages from the server
-// socket.on('message', (data) => {
-//     console.log('Received message:', data);
-// });
-
-// // Emit a message to the server
-// socket.emit('message', 'Hello from the client!');
-
-// // Listen for disconnect
-// socket.on('disconnect', () => {
-//     console.log('Disconnected from server');
-// });
 </script>
 
 <template>
-    <div class="min-h-[100vh] py-6 ">
-        <ChatsPage />
+    <div class='bg-[#0C1317] my-6  '>
+        <div class='flex overflow-y-hidden h-[calc(100vh-48px)]  max-w-screen-2xl     bg-[#202C33]  mx-auto   '>
+            <!-- <div class='fixed top-0 left-0 w-full h-36 bg-[#0C1317]  -z-30  ' /> -->
+
+            <section class="h-full w-1/3 flex">
+                <div class="w-16 h-full px-3 ">
+                    <SideBar />
+                </div>
+
+                <div class="h-full flex-1 ">
+                    <LeftPanel />
+                </div>
+            </section>
+
+            <!-- Right panel -->
+            <section class="h-full  flex-1">
+                <RightPanel />
+            </section>
+
+        </div>
     </div>
 </template>
