@@ -3,11 +3,12 @@
         <div class="flex  flex-col items-center space-y-3 bg-white">
             <div v-for="x in 4 ">
                 <MessageSquare />
+                <Icon name="status" />
             </div>
         </div>
 
         <div class="flex  flex-col items-center space-y-3 bg-white">
-            <div v-for="x in 4 ">
+            <div v-for="x in 2 ">
                 <MessageSquare />
             </div>
         </div>
@@ -16,7 +17,7 @@
 
 <script setup>
 import { ref, watchEffect } from "vue";
-import { MessageSquare } from 'lucide-vue-next';
+import { MessageSquare, MessageSquareText, Circle, MessageCircleMore } from 'lucide-vue-next';
 // import { Search, ListFilter } from "lucide-vue";
 // import UserButton from "@clerk/clerk-vue/dist/components/UserButton.vue";
 // import Input from "../ui/Input.vue";
