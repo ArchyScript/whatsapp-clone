@@ -1,66 +1,80 @@
 <script lang="ts" setup>
-import { ref, watchEffect } from "vue";
-import { createError } from 'vue-router'; // for error handling, depending on your setup
+import { ref, watchEffect ,onMounted} from "vue";
 
+// Define the props for the component
 interface Props {
-  name: string;
-  filled?: boolean;
+  name: string; // Name of the icon (without .svg extension)
+  filled?: boolean; // Optional prop to control filled/stroke SVG styles
+      size?: number; // Add size prop
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  filled: true,
+  filled: true, // Default to `filled` being true
+   size: 24, // Default size
 });
 
 const hasStroke = ref(false);
-const icon = ref("");
+const icon = ref<string>("");
 
+// Fetch the SVG icon dynamically
 const fetchIcon = async () => {
   try {
-    const iconsImport = import.meta.glob("../assets/icons/**/**.svg", {
-      eager: false, // Don't import immediately, load when required
-      query: "?raw", // Ensures we load the raw content of the SVG
+    // Import SVG files from the `@/assets/icons` folder
+    const iconsImport = import.meta.glob("@/assets/icons/**/*.svg", {
+      eager: false,  
+      query: "?raw",  
       import: "default",
-    });
+    }); 
 
-    const rawIcon = await iconsImport[`../assets/icons/${props.name}.svg`]();
-    
-    // Check if the SVG contains a 'stroke' attribute
-    if (rawIcon.includes("stroke")) hasStroke.value = true;
+const iconPath = `/src/assets/icons/${props.name}.svg`;
 
-    icon.value = rawIcon; // Set the loaded SVG content
+if (!iconsImport[iconPath]) {
+      throw new Error(`Icon "${props.name}" not found`);
+}
+ 
+const rawIcon  = await iconsImport[iconPath]()   ; 
+    const iconSvgContent = rawIcon as string;
+
+    // Check if the icon contains a stroke
+    hasStroke.value = iconSvgContent.includes("stroke"); 
+    icon.value = iconSvgContent;  
   } catch (error) {
-    throw createError({
-      statusCode: 404,
-       statusMessage: `Icon "${props.name}" not found`,  
-    });
+    // Handle the case where the icon is not found 
+    throw new Error(`Icon "${props.name}" not found`,);
   }
 };
 
-// Fetch the icon when the component is first created
-await fetchIcon();
-
-// Re-fetch the icon whenever the `name` prop changes
-watchEffect(() => {
-  fetchIcon();
-});
+// Fetch the icon when the component is mounted
+onMounted(() => fetchIcon()); 
+// Re-fetch the icon whenever the name prop changes
+watchEffect(() => fetchIcon()  ); 
 </script>
 
 <template>
-  <span class="base-icon" :class="{ 'icon--fill': filled, 'icon--stroke': hasStroke && !filled }" v-html="icon" />
+  <!-- Render the loaded SVG content --> 
+  <span 
+  
+  class="base-icon " :class="{ 'icon--fill': filled, 'icon--stroke': hasStroke && !filled }" v-html="icon" 
+  
+    :style="{ width: `${props.size}px`, height: `${props.size}px` }" 
+ 
+ 
+ />
 </template>
 
 <style scoped>
-.base-icon {
+/* Base styling for the icon */
+.base-icon { 
   line-height: 0;
 }
 
-/* Apply fill color */
+/* Apply fill color to the icon */
 .base-icon.icon--fill,
 .base-icon.icon--fill * {
   fill: currentColor !important;
 }
 
-/* Apply stroke color */
+/* Apply stroke color to the icon */
 .base-icon.icon--stroke,
 .base-icon.icon--stroke * {
   stroke: currentColor !important;

@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import { MessageSquare } from 'lucide-vue-next';
+<script setup lang="ts"> 
 import SideBar from '../components/layout/SideBar.vue'
 import LeftPanel from '../components/layout/LeftPanel.vue'
 import RightPanel from '../components/layout/RightPanel.vue'
