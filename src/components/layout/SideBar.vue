@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- tooltip -->
-                <Tooltip :text="link.title" />
+                <!-- <Tooltip :text="link.title" /> -->
 
                 <!-- active state -->
                 <span class="absolute  inline-block right-0.5 top-0.5    h-2 w-2 rounded-full bg-green-400 ">
@@ -25,7 +25,7 @@
                     <img src="@/assets/images/meta-ai.png" class="h-6 w-6" />
                 </div>
 
-                <Tooltip text="Meta" />
+                <!-- <Tooltip text="Meta" /> -->
             </div>
         </div>
 
@@ -37,11 +37,7 @@
                 </div>
 
                 <!-- tooltip -->
-                <Tooltip text="Settings" />
-
-                <!-- active state -->
-                <span class="absolute  inline-block right-0.5 top-0.5    h-2 w-2 rounded-full bg-green-400 ">
-                </span>
+                <!-- <Tooltip text="Settings" /> -->
             </div>
 
             <!-- Meta AI -->
@@ -50,7 +46,6 @@
                     class="w-8 h-8  cursor-pointer rounded-full flex justify-center items-center   transition duration-300 ease-in-out ">
                     <img src="@/assets/images/bg-dark.png" class="h-full w-full rounded-full" />
                 </div>
-
                 <Tooltip text="Profile" />
             </div>
         </div>

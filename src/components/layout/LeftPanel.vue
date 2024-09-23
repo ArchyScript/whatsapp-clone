@@ -1,65 +1,177 @@
 <template>
-    <div class="w-full h-full  bg-[#111B21]">
-        <div class="sticky top-0 bg-left-panel z-10">
-            <!-- Header -->
-            <div class="flex justify-between bg-gray-primary p-3 items-center">
-                <!-- <UserButton /> -->
-
-                <div class="flex items-center gap-3">
-                    test
-                    <!-- <UserListDialog v-if="isAuthenticated" />
-                    <ThemeSwitch /> -->
-                </div>
-            </div>
-
-            <div class="p-3 flex items-center">
-                <!-- Search -->
-                <div class="relative h-10 mx-3 flex-1">
-                    <Search class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 z-10" size="18" />
-                    <Input type="text" placeholder="Search or start a new chat"
-                        class="pl-10 py-2 text-sm w-full rounded shadow-sm bg-gray-primary focus-visible:ring-transparent" />
-                </div>
-                <ListFilter class="cursor-pointer" />
-            </div>
-        </div>
-        <!-- Chat List -->
-        <!-- <div class="my-3 flex flex-col gap-0 max-h-[80%] overflow-auto"> 
-            <Conversation v-for="conversation in conversations" :key="conversation._id" :conversation="conversation" />
-
-            <div v-if="conversations.length === 0" class="text-center text-gray-500 text-sm mt-3">
-                <p>No conversations yet</p>
-                <p>We understand you're an introvert, but you've got to start somewhere 😊</p>
-            </div>
-        </div> -->
-    </div>
+  <div class="h-full bg-[#111B21]">
+    <Chats />
+  </div>
 </template>
 
 <script setup>
-import { ref, watchEffect } from "vue";
-// import { Search, ListFilter } from "lucide-vue";
-// import UserButton from "@clerk/clerk-vue/dist/components/UserButton.vue";
-// import Input from "../ui/Input.vue";
-// import ThemeSwitch from "../ThemeSwitch.vue";
-// import UserListDialog from "./UserListDialog.vue";
-// import Conversation from "../Conversation.vue";
-// import { useConvexAuth, useQuery } from "@convex/vue";
-// import { api } from "@/convex/_generated/api";
-// import { useConversationStore } from "@/store/chat-store";
+import Chats from '@/components/Chats/index.vue'
 
-// Convex auth and conversations query
-// const { isAuthenticated, isLoading } = useConvexAuth();
-// const conversations = useQuery(() =>
-//     isAuthenticated.value ? api.conversations.getMyConversations() : "skip"
-// );
 
-// // Conversation store
-// const { selectedConversation, setSelectedConversation } = useConversationStore();
+const chats = [
+  {
+    id: 1,
+    name: "Family Group",
+    image: "family_group.png",
+    isGroup: true,
+    isCommunity: false,
+    isChat: true,
+    lastMessage: {
+      sender: "Mom",
+      content: "Dinner at 7?",
+      time: "18:45",
+      isRead: true,
+    },
+    unreadCount: 0,
+  },
+  {
+    id: 2,
+    name: "Work Team",
+    image: "work_team.png",
+    isGroup: true,
+    isCommunity: true, // part of a community
+    isChat: true,
+    community: {
+      communityName: "Company Groups",
+      communityImage: "company_groups.png",
+    },
+    lastMessage: {
+      sender: "Boss",
+      content: "Meeting at 9 AM tomorrow.",
+      time: "17:30",
+      isRead: false,
+    },
+    unreadCount: 2,
+  },
+  {
+    id: 3,
+    name: "John Doe",
+    image: "john_doe.png",
+    isGroup: false,
+    isCommunity: false,
+    isChat: true,
+    lastMessage: {
+      sender: "John Doe",
+      content: "See you tomorrow!",
+      time: "15:15",
+      isRead: true,
+    },
+    unreadCount: 0,
+  },
+  {
+    id: 4,
+    name: "Gaming Buddies",
+    image: "gaming_buddies.png",
+    isGroup: true,
+    isCommunity: false,
+    isChat: true,
+    lastMessage: {
+      sender: "Alex",
+      content: "Who’s online tonight?",
+      time: "14:05",
+      isRead: false,
+    },
+    unreadCount: 3,
+  },
+  {
+    id: 5,
+    name: "Tech News",
+    image: "tech_news.png",
+    isGroup: true,
+    isCommunity: true, // part of a community
+    isChat: false, // Community announcements
+    community: {
+      communityName: "Tech News Community",
+      communityImage: "tech_news_community.png",
+    },
+    lastMessage: {
+      sender: "Admin",
+      content: "New update on AI research.",
+      time: "12:30",
+      isRead: false,
+    },
+    unreadCount: 5,
+  },
+  {
+    id: 6,
+    name: "Bestie",
+    image: "bestie.png",
+    isGroup: false,
+    isCommunity: false,
+    isChat: true,
+    lastMessage: {
+      sender: "Bestie",
+      content: "Let’s catch up soon!",
+      time: "10:20",
+      isRead: true,
+    },
+    unreadCount: 0,
+  },
+  {
+    id: 7,
+    name: "Sports Club",
+    image: "sports_club.png",
+    isGroup: true,
+    isCommunity: false,
+    isChat: true,
+    lastMessage: {
+      sender: "Coach",
+      content: "Training at 6 PM sharp!",
+      time: "08:45",
+      isRead: false,
+    },
+    unreadCount: 1,
+  },
+  {
+    id: 8,
+    name: "Developers Hub",
+    image: "developers_hub.png",
+    isGroup: true,
+    isCommunity: true,
+    isChat: false,
+    community: {
+      communityName: "Programming Communities",
+      communityImage: "programming_community.png",
+    },
+    lastMessage: {
+      sender: "Lead Developer",
+      content: "New JavaScript features explained.",
+      time: "07:30",
+      isRead: false,
+    },
+    unreadCount: 10,
+  },
+  {
+    id: 9,
+    name: "Gym Buddies",
+    image: "gym_buddies.png",
+    isGroup: true,
+    isCommunity: false,
+    isChat: true,
+    lastMessage: {
+      sender: "Tom",
+      content: "Workout session at 5?",
+      time: "06:15",
+      isRead: true,
+    },
+    unreadCount: 0,
+  },
+  {
+    id: 10,
+    name: "Alice",
+    image: "alice.png",
+    isGroup: false,
+    isCommunity: false,
+    isChat: true,
+    lastMessage: {
+      sender: "Alice",
+      content: "Happy Birthday!",
+      time: "Yesterday 21:00",
+      isRead: false,
+    },
+    unreadCount: 1,
+  },
+];
 
-// // Watch for conversation updates
-// watchEffect(() => {
-//     const conversationIds = conversations?.value?.map((conv) => conv._id);
-//     if (selectedConversation.value && conversationIds && !conversationIds.includes(selectedConversation.value._id)) {
-//         setSelectedConversation(null);
-//     }
-// });
+
 </script>

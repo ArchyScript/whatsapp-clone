@@ -1,5 +1,5 @@
 <template>
-  <div class="w-3/4 flex flex-col">
+  <div class="w-full flex flex-col">
     <div class="w-full sticky top-0 z-50">
       <!-- Header -->
       <div class="flex justify-between bg-gray-primary p-3">
