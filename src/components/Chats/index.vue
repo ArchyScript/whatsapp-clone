@@ -1,26 +1,26 @@
 <template>
-  <div>
+  <div class=" h-full ">
     <!-- Header -->
-    <div> </div>
+    <ChatHeader />
+    <Search />
 
-    <!-- body -->
-    <div>
-      <!-- Archive -->
-      <div>
-
-      </div>
-
+    <!-- Chats -->
+    <div class="overflow-auto  h-full">
+      <!-- Archive Counter -->
+      <ArchiveCounter />
 
       <!-- Chats -->
-      <div>
+      <div v-for="chat in 58">
         <Chat />
       </div>
+
+      <ChatFooter />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Chat from '@/components/Chats/Chat.vue'
+import { Chat, ChatFooter, ArchiveCounter, ChatHeader, Search } from '@/components/Chats'
 </script>
 
 
