@@ -1,26 +1,15 @@
 <template>
-  <div data-tab="4" class="text-white relative w-full  flex items-center space-x-3 px-3 py-3" aria-label="Archived">
-    <div class="flex items-center w-12 justify-center">
-      <div class="flex items-center justify-center">
-        <span aria-hidden="true" data-icon="archived-outline">
-          <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" fill="none">
-            <title>archived-outline</title>
-            <path
-              d="M21.4889 4.47778L19.9444 2.61111C19.6444 2.23333 19.1889 2 18.6667 2H5.33333C4.81111 2 4.35556 2.23333 4.04444 2.61111L2.51111 4.47778C2.18889 4.85556 2 5.35556 2 5.88889V19.7778C2 21 3 22 4.22222 22H19.7778C21 22 22 21 22 19.7778V5.88889C22 5.35556 21.8111 4.85556 21.4889 4.47778ZM5.6 4.22222H18.4L19.3 5.3H4.71111L5.6 4.22222ZM4.22222 19.7778V7.55556H19.7778V19.7778H4.22222ZM13.6111 9.77778H10.3889V13.1111H7.55556L12 17.5556L16.4444 13.1111H13.6111V9.77778Z"
-              fill="currentColor"></path>
-          </svg>
-        </span>
-      </div>
-    </div>
+  <div class="text-white relative w-full  flex items-center space-x-3 px-3 py-2" role="button">
+    <span class="flex items-center w-12 justify-center">
+      <Icon name="archived-outline" />
+    </span>
 
-    <div class="flex-1 flex items-center justify-between ">
-      <div class="flex-1">
-        <div class="text-sm">Archived</div>
-      </div>
+    <div class="flex-1 flex items-center justify-between space-x-2 ">
+      <p class="font-medium text-sm ">Archived</p>
 
-      <div class="  bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+      <span class="  bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
         5
-      </div>
+      </span>
     </div>
   </div>
 </template>

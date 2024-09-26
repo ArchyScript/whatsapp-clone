@@ -1,16 +1,17 @@
 <template>
   <div class=" h-full ">
     <!-- Header -->
-    <ChatHeader />
-    <Search />
+    <div class="space-y-6">
+      <ChatHeader />
+     </div>
 
     <!-- Chats -->
-    <div class="overflow-auto  h-full">
+    <div class="overflow-auto h-full pb- 32">
       <!-- Archive Counter -->
       <ArchiveCounter />
 
       <!-- Chats -->
-      <div v-for="chat in 58">
+      <div v-for="chat in 30">
         <Chat />
       </div>
 
@@ -20,7 +21,14 @@
 </template>
 
 <script setup lang="ts">
-import { Chat, ChatFooter, ArchiveCounter, ChatHeader, Search } from '@/components/Chats'
+import { ref } from 'vue';
+import { Chat, ChatFooter, ArchiveCounter, ChatHeader,   } from '@/components/Chats'
+const tabs = [
+  { title: 'all', },
+  { title: 'unread', },
+  { title: 'read' }
+]
+const activeTab = ref('all')
 </script>
 
 

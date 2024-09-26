@@ -7,7 +7,7 @@
                     :class="{
                         'bg-[#374248]': link.title === activeLink,
                     }" @click="activeLink = link.title">
-                    <Icon :name="link.icon" />
+                    <Icon :name="activeLink === link.title ? link.icon : `${link.icon}-outline`" />
                 </div>
 
                 <!-- tooltip -->
@@ -19,8 +19,9 @@
             </div>
 
             <!-- Meta AI -->
-            <div class="relative">
+            <div class="relative" >
                 <div
+                @click="activeLink = 'meta'"
                     class="w-10 h-10  cursor-pointer rounded-full flex justify-center items-center  transition duration-300 ease-in-out ">
                     <img src="@/assets/images/meta-ai.png" class="h-6 w-6" />
                 </div>
@@ -33,7 +34,7 @@
             <div class="relative">
                 <div
                     class="w-10 h-10  cursor-pointer rounded-full flex justify-center items-center text-[#AEBAC1] hover:bg-[#374248] transition duration-300 ease-in-out ">
-                    <Icon name="settings" />
+                    <Icon :name="activeLink === 'settings' ? 'settings' : 'settings-outline'" />
                 </div>
 
                 <!-- tooltip -->
@@ -59,13 +60,13 @@ const activeLink = ref('chats')
 const sideBarLinks = [
     {
         title: 'chats',
-        icon: 'message',
+        icon: 'chat',
     }, {
         title: 'status',
         icon: 'status',
     }, {
         title: 'channels',
-        icon: 'channels',
+        icon: 'newsletter',
     }, {
         title: 'communities',
         icon: 'communities',

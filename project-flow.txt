@@ -2,3 +2,4 @@ Unit testing
 Pinia, Socket io, tailwind, Vue TS,  
 react status, delete message, edit message after a certain timer, app info
 left bar is a component related to the sidebar
+keep  data like status dummy 
