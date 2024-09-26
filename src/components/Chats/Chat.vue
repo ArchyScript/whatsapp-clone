@@ -37,9 +37,9 @@
         </div>
 
         <div class="flex justify-between items-center">
-          <p class="flex-1 text-gray-500 flex items-center space-x-1">
-            <Icon :name="chatClasses[chat.status].icon" :class="chatClasses[chat.status].class" />
-            <span class="font-medium">Nnb</span>
+          <p class="flex-1 text-gray-500 flex items-center  ">
+            <Icon :name="chatClasses[chat.status].icon" class="!h-[18px]" :class="chatClasses[chat.status].class" />
+            <span class="font-medium">{{ chat.lastMessage?.content }}</span>
           </p>
 
           <div class="flex space-x-2 items-center">
@@ -61,21 +61,19 @@
           <div class="text-xs text-gray-500">{{ chat.time }}</div>
         </div>
 
-        <div class="flex justify-between items-center" v-if="chat.isChat">
+        <div class="flex justify-between items-center">
           <h5 class="font-bold ">Node.JS Africa</h5>
           <span class="text-sm ">Yesterday</span>
         </div>
 
         <!-- Last message -->
-        <div class="flex justify-between items-center">
+        <!-- <div class="flex justify-between items-center">
           <p class="flex-1 text-gray-500">
             ~ cookingApps: <span class="font-medium">Nnb</span>
           </p>
 
-          <div class="flex space-x-2 items-center">
-            <!-- Pin icon -->
-            <Icon name="pin" class="!h-3.5 !w-3.5" />
-            <!-- unread message -->
+          <div class="flex space-x-2 items-center"> 
+            <Icon name="pin" class="!h-3.5 !w-3.5" /> 
             <div role="gridcell" aria-colindex="1" class="flex items-center justify-center">
               <span>
                 <div class="transform scale-100 opacity-100">
@@ -88,13 +86,14 @@
               </span>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { defineProps } from 'vue'
+type ChatStatus = 'sent' | 'read' | 'delivered';
 type Chat = {
   isChat: boolean;
   isGroup: boolean;
@@ -108,7 +107,7 @@ type Chat = {
   };
   time: string;
   lastSeen: string;
-  status: 'sent' | 'delivered' | 'read';
+  status: ChatStatus;
   unreadMessages: number;
   images: {
     communityImage?: string; // For groups in a community
@@ -122,19 +121,21 @@ interface Props {
 }
 defineProps<Props>()
 
-const chatClasses = {
-  'sent': {
-    class: 'text-green-500',
+
+
+const chatClasses: Record<ChatStatus, { class: string; icon: string }> = {
+  sent: {
+    class: 'text-gray-500',
     icon: 'status-check'
   },
-  'read': {
+  delivered: {
+    class: 'text-gray-500',
+    icon: 'status-dblcheck'
+  },
+  read: {
     class: 'text-blue-500',
-    icon: 'status-check'
+    icon: 'status-dblcheck'
   },
-  'delivered': {
-    class: 'text-red-500',
-    icon: 'status-check'
-  }
 } 
 </script>
 

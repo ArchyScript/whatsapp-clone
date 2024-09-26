@@ -36,7 +36,7 @@ type Chat = {
   };
   time: string;
   lastSeen: string;
-  status: 'sent' | 'delivered' | 'read' ;
+  status: 'sent' | 'delivered' | 'read';
   unreadMessages: number;
   images: {
     communityImage?: string; // For groups in a community
@@ -47,6 +47,23 @@ type Chat = {
 };
 
 const chatData: Chat[] = [
+  {
+    isChat: true,
+    isGroup: false,
+    contactName: "John Doe",
+    lastMessage: {
+      sender: "John Doe",
+      content: "Great resources for learning React",
+    },
+    time: "14:20",
+    lastSeen: "Today",
+    status: 'read',
+    unreadMessages: 9,
+    images: {
+      profile: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    isPinned: false,
+  },
   {
     isChat: false,
     isGroup: true,
@@ -73,7 +90,8 @@ const chatData: Chat[] = [
     contactName: "John Doe",
     lastMessage: {
       sender: "John Doe",
-      content: "Great resources for learning React",
+      content: "Grevat resources for learning ",
+      // content: "Grevat resources for learning React, it a very intering tool to work with",
     },
     time: "14:20",
     lastSeen: "Today",
@@ -99,6 +117,24 @@ const chatData: Chat[] = [
     unreadMessages: 1,
     images: {
       groupImage: "https://randomuser.me/api/portraits/women/44.jpg",
+    },
+    isPinned: false,
+  },
+
+  {
+    isChat: true,
+    isGroup: false,
+    contactName: "John Doe",
+    lastMessage: {
+      sender: "John Doe",
+      content: "Great resources for learning React",
+    },
+    time: "14:20",
+    lastSeen: "Today",
+    status: 'sent',
+    unreadMessages: 9,
+    images: {
+      profile: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     isPinned: false,
   },
