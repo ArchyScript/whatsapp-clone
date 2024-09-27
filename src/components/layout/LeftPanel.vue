@@ -11,7 +11,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Chats, Communities, Status, Settings, Channels, Profile } from '@/components/leftPanel'
+import { Chats, Communities, Status, Settings, Channels, Profile } from '@/components/leftPanel/index.ts'
 
 const activePanel = ref('chats') 
 </script>

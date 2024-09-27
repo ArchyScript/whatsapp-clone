@@ -21,7 +21,7 @@
     </div>
 
     <!-- Text content -->
-    <div class="flex-grow truncate text-white border-b baorder-gray-700 p-3 pl-0 ">
+    <div class="flex-grow truncate text-white border-b border-gray-700 p-3 pl-0 ">
       <!-- Chat -->
       <div v-if="chat.isChat">
         <div class="flex justify-between items-center truncate" v-if="chat.isChat">
