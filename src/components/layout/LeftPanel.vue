@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full bg-[#111B21]">
+  <div class="h-full bg-[#111B21]  ">
     <Chats />
   </div>
 </template>
