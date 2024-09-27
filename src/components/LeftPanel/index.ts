@@ -1,0 +1,6 @@
+export { default as Chats } from '@/components/Chats/index.vue'
+export { default as Communities } from '@/components/Communities/index.vue'
+export { default as Settings } from '@/components/Settings/index.vue'
+export { default as Status } from '@/components/Status/index.vue'
+export { default as Channels } from '@/components/Channels/index.vue'
+export { default as Profile } from '@/components/Profile/index.vue'
