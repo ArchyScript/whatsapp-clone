@@ -1,6 +1,6 @@
 <template>
-  <div class="sticky py-2 space-y-1">
-    <div>
+  <div class="sticky py-2 space-y-1.5">
+    <div class="space-y-0.5">
       <LeftPanelTitle title="Chats">
         <template #right-side>
           <div class="flex space-x-3">
@@ -35,7 +35,7 @@
 
     <div class="space-y-2.5 px-6">
       <Search />
-      <Tabs :tabs :activeTab @selectTab="title => activeTab = title" />
+      <Tabs :tabs :activeTab @selectTab="(title: string) => activeTab = title" />
     </div>
   </div>
 </template>

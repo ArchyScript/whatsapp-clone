@@ -1,12 +1,14 @@
 <template>
   <div class=" h-full truncate ">
-    Test ne
-
+    <CommunitiesHeader />
+     
   </div>
 </template>
 
 <script setup lang="ts">
+import { CommunitiesHeader, } from '@/components/Communities'   
 </script>
 
 
-<style></style>
+<style>  
+</style>

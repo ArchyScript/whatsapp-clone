@@ -1,13 +1,13 @@
 <template>
   <div class=" h-full truncate ">
-  Test ne
- 
+    <ChannelsHeader />
+     
   </div>
 </template>
 
-<script setup lang="ts"> 
-</script>
+<script setup lang="ts">
+import { ChannelsHeader, } from '@/components/Channels'   
+</script> 
 
-
-<style> 
+<style>  
 </style>
