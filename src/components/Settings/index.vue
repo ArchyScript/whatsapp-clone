@@ -5,7 +5,7 @@
     <div class="!overflow-auto h-full pb-40 truncate space-y-3">
       <!-- Profile  -->
       <div class="flex items-center ">
-        <div class="px-4 py-3 flex-shrink-0 size-fit">
+        <div class="px-5 py-3 flex-shrink-0 size-fit">
           <img class="size-20 rounded-full object-cover" alt="Profile"
             src="https://randomuser.me/api/portraits/men/22.jpg" />
         </div>
