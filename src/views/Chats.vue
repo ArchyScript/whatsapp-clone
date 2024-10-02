@@ -36,7 +36,7 @@ const onSubmit = () => {
 </script>
 
 <template>
-    <div class="min-h-[100vh] py-6 w-96 mx-auto ">
+    <div class="min-h-[100vh] py-6  w-96 mx-auto ">
         <div class="relative w-full max-h-[580px] space-y-6 p-6 rounded-2xl mx-auto bg-white border ">
             <div class="space-y-2 w-full">
                 <label class="text-xs foont-medium">
