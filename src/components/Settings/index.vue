@@ -2,7 +2,7 @@
   <div class=" h-full truncate ">
     <SettingsHeader />
 
-    <div class="!overflow-auto h-full pb-40 truncate ">
+    <div class="!overflow-auto h-full pb-40 truncate space-y-3">
       <!-- Profile  -->
       <div class="flex items-center ">
         <div class="px-4 py-3 flex-shrink-0 size-fit">
@@ -32,7 +32,8 @@
           <p class="p-4 pl-0 flex-1 class font-medium border-b border-gray-700"> {{ settings.title }} </p>
         </div>
 
-        <div class="flex items-center  text-red-400  ">
+        <!-- Logout -->
+        <div class="flex items-center text-white  hover:bg-[#2A3942]  cursor-pointer  text-red-400  ">
           <div class="px-4 py-3 size-12 flex justify-center items-center ">
             <Icon name="logout" />
           </div>
