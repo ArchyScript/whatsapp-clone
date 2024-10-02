@@ -51,7 +51,7 @@
 </template>
 <script setup lang="ts">
 import { defineProps, } from 'vue'
-import { UnreadMessageCount, } from "@/components/common"
+import { UnreadMessageCount, } from "@/components/Common"
 import type { ChannelType, ChannelMessageType } from "@/types"
 
 defineProps<{ channel: ChannelType }>()

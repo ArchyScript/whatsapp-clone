@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { Chat, ArchiveCounter, ChatHeader } from '@/components/Chats'
-import { LeftPanelFooter, } from "@/components/common"
+import { LeftPanelFooter } from "@/components/Common"
 import { chats } from "@/db"
 
 </script>

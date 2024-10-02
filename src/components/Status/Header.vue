@@ -13,12 +13,12 @@
           </span>
         </div>
       </template>
-    </LeftPanelTitle> 
+    </LeftPanelTitle>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { LeftPanelTitle } from "@/components/common"
+import { LeftPanelTitle } from "@/components/Common"
 
 </script>

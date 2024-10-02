@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { LeftPanelTitle, Search } from "@/components/common"
+import { LeftPanelTitle, Search } from "@/components/Common"
 
 const tabs = [
   { title: 'all', },
