@@ -42,8 +42,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Search } from '@/components/Chats'
-import { LeftPanelTitle } from "@/components/common"
+import { LeftPanelTitle, Search } from "@/components/common"
 
 const tabs = [
   { title: 'all', },

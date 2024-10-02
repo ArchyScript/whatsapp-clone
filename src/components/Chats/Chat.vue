@@ -24,7 +24,7 @@
     <div class="flex-grow truncate text-white border-b border-gray-700 p-3 pl-0 ">
       <!-- Chat -->
       <div v-if="chat.isChat">
-        <div class="flex justify-between items-center truncate" v-if="chat.isChat">
+        <div class="flex justify-between items-center truncate" >
           <h5 class="font-bold ">{{ chat.contactName }}</h5>
           <span class="text-sm ">{{ chat.time }}</span>
         </div>

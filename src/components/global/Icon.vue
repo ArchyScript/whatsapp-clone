@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import { ref, watchEffect, onMounted } from "vue";
-
+import type {IconType} from '@/types'
 // Define the props for the component
 interface Props {
-  name: string; // Name of the icon (without .svg extension)
-  filled?: boolean; // Optional prop to control filled/stroke SVG styles
-  size?: number; // Add size prop
+  name: string;  
+  filled?: boolean; 
+  size?: number;  
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  filled: true, // Default to `filled` being true
-  size: 24, // Default size
+  filled: true, 
+  size: 24,  
 });
 
 const hasStroke = ref(false);

@@ -13,16 +13,14 @@
         <Chat :chat />
       </div>
 
-      <LeftPanelFooter title="personal messages"/>
+      <LeftPanelFooter title="personal messages" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Chat, ArchiveCounter, ChatHeader, } from '@/components/Chats'
-import { LeftPanelFooter } from "@/components/common"
-import { chats } from "@/db" 
+import { Chat, ArchiveCounter, ChatHeader } from '@/components/Chats'
+import { LeftPanelFooter, } from "@/components/common"
+import { chats } from "@/db"
 
 </script>
-
- 

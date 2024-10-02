@@ -1,0 +1,29 @@
+export type IconType = 'archived-outline' |
+  'back' |
+  'chat' |
+  'chat-outline' |
+  'chevron' |
+  'communities' |
+  'communities-outline' |
+  'createCommunity' |
+  'default-group' |
+  'empty' |
+  'lock-small' |
+  'menu' |
+  'new-chat-outline' |
+  'newsletter' |
+  'newsletter-outline' |
+  'pin' |
+  'plus' |
+  'psa-verified' |
+  'search' |
+  'settings' |
+  'settings-outline' |
+  'status' |
+  'status-audio' |
+  'status-check' |
+  'status-dblcheck' |
+  'status-image' |
+  'status-outline' |
+  'status-video' |
+  'times';

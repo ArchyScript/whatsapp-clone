@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
-  imageUrl?: string;
+  size: string;
+  imageUrl: string;
   defaultType?: 'user' | 'group' | 'community';
 }>();
 
@@ -17,6 +18,6 @@ const imageToShow = props.imageUrl || defaultImages[props.defaultType || 'user']
 
 <template>
   <div class="flex-shrink-0 w-full h-full">
-    <img class="w-full h-full rounded-full object-cover" alt="Profile" :src="imageToShow" />
+    <img class="w-full h-full rounded-full object-cover" alt="Profile" :src="imageUrl" />
   </div>
 </template>
