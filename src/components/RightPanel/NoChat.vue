@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center m-auto">
+  <div class="flex flex-col items-center m-auto p-10">
     <!-- Image Section -->
     <div class="mb-6  ">
       <img class="w-80" alt="WhatsApp" src="https://static.whatsapp.net/rsrc.php/v3/y6/r/wa669aeJeom.png" />
