@@ -56,9 +56,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useAppStore } from '@/stores/app';
 const { setActiveTab } = useAppStore();
+import { getAuthTest } from '@/infrastructures/api'
 
 const activeTab = computed(() => useAppStore().activeTab)
 const sideBarTabs = [
@@ -83,6 +84,10 @@ const sideBarTabs = [
 const selectTab = (tab: string) => {
     setActiveTab(tab);
 };
+
+onMounted(async () => {
+    await getAuthTest()
+})
 </script>
 
 
