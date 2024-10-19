@@ -43,13 +43,26 @@
                 <Tooltip text="Settings" />
             </div>
 
-            <!-- Meta AI -->
+            <!-- Profile Image -->
             <div class="relative">
                 <div @click="selectTab('profile')"
                     class="w-8 h-8  cursor-pointer rounded-full flex justify-center items-center   transition duration-300 ease-in-out ">
                     <img src="@/assets/images/bg-light.png" class="h-full w-full rounded-full" />
                 </div>
                 <Tooltip text="Profile" />
+            </div>
+
+
+            <!-- Testing api request  to exstablish connection -->
+            <div class="flex w-full flex-col items-center space-y-3     py-2">
+                <div class="relative">
+                    <div @click="sendMessage"
+                        class="w-10 h-10  cursor-pointer rounded-full flex justify-center items-center text-[#AEBAC1] hover:bg-[#374248] transition duration-300 ease-in-out ">
+                        <Icon name="settings-outline" />
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
@@ -85,9 +98,30 @@ const selectTab = (tab: string) => {
     setActiveTab(tab);
 };
 
+
+import { io } from 'socket.io-client';
+
+const socket = io('http://localhost:5000');
+const message = ref('');
+const messages = ref<any[]>([]);
+
+const sendMessage = () => {
+    socket.emit('privateMessage', {
+        senderId: 'user1',
+        recipientId: 'user2',
+        message: 'test mea mesage',
+    });
+    message.value = '';
+};
+
 onMounted(async () => {
     await getAuthTest()
-})
+
+    // socket.on('receiveMessage', (data: any) => {
+    //     console.log('received message:', data)
+    //     messages.value.push(data); // Add received message to message list
+    // }); 
+});
 </script>
 
 
