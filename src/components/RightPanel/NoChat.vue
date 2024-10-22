@@ -30,7 +30,18 @@
 </template>
 
 <script setup lang="ts">
-// No additional logic needed for this component
+import { signup } from '@/infrastructures/api'
+
+const register = async () => {
+  const response = await signup({
+    username: "Tungii",
+    password: "Tioajh@10",
+    phoneNumber: '567893462653',
+    email: 'yung@email.com'
+  })
+
+  console.log('response', response)
+}
 </script>
 
 <style scoped></style>

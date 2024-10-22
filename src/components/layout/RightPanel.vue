@@ -1,8 +1,7 @@
 <template>
-  <div class="w-full h-full flex flex-col">
- 
-    <NoChat/>
-   </div>
+  <div class="w-full h-full flex flex-col overflow-auto">
+    <NoChat />
+  </div>
 </template>
 
 <script setup lang="ts">
