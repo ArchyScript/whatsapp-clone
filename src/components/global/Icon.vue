@@ -19,13 +19,13 @@ const icon = ref<string>("");
 const fetchIcon = async () => {
   try {
     // Import SVG files from the `@/assets/icons` folder
-    const iconsImport = import.meta.glob("/src/assets/icons/**/*.svg", {
+    const iconsImport = import.meta.glob("/public/icons/**/*.svg", {
       eager: false,
       query: "?raw",
       import: "default",
     });
 
-    const iconPath = `/src/assets/icons/${props.name}.svg`;
+    const iconPath = `/public/icons/${props.name}.svg`;
 
     if (!iconsImport[iconPath]) {
       throw new Error(`Icon "${props.name}" not found`);
