@@ -1,12 +1,14 @@
 <template>
   <div class="w-full h-full flex flex-col overflow-auto">
-    <NoChat />
+    <!-- <NoChat /> -->
+    <MessageContainer />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { NoChat } from '@/components/RightPanel'
+import { NoChat,MessageContainer } from '@/components/RightPanel'
+
 // import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 // import { Video, X } from 'lucide-vue-next'; // Assuming you're using Lucide Vue
 // import MessageInput from './message-input.vue';

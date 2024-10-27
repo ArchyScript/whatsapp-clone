@@ -1,16 +1,15 @@
 <script lang="ts" setup>
-import { ref, watchEffect, onMounted } from "vue";
-import type {IconType} from '@/types'
+import { ref, watchEffect, onMounted, computed, defineAsyncComponent } from "vue";
+import type { IconType } from '@/types'
 // Define the props for the component
 interface Props {
-  name: string;  
-  filled?: boolean; 
-  size?: number;  
+  name: string;
+  filled?: boolean;
+  size?: number;
 }
-
 const props = withDefaults(defineProps<Props>(), {
-  filled: true, 
-  size: 24,  
+  filled: true,
+  size: 24,
 });
 
 const hasStroke = ref(false);
@@ -20,7 +19,7 @@ const icon = ref<string>("");
 const fetchIcon = async () => {
   try {
     // Import SVG files from the `@/assets/icons` folder
-    const iconsImport = import.meta.glob("@/assets/icons/**/*.svg", {
+    const iconsImport = import.meta.glob("/src/assets/icons/**/*.svg", {
       eager: false,
       query: "?raw",
       import: "default",
@@ -54,6 +53,7 @@ watchEffect(() => fetchIcon());
   <!-- Render the loaded SVG content -->
   <span class="base-icon " :class="{ 'icon--fill': filled, 'icon--stroke': hasStroke && !filled }" v-html="icon"
     :style="{ width: `${props.size}px`, height: `${props.size}px` }" />
+
 </template>
 
 <style scoped>

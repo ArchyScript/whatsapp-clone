@@ -19,6 +19,13 @@
           Get from Microsoft Store
         </button>
       </div>
+
+      <div class="mt-4">
+        <button @click="signin"
+          class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+          Login
+        </button>
+      </div>
     </div>
 
     <!-- Footer Section -->
@@ -30,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { signup } from '@/infrastructures/api'
+import { signup, login } from '@/infrastructures/api'
 
 const register = async () => {
   const response = await signup({
@@ -38,6 +45,15 @@ const register = async () => {
     password: "Tioajh@10",
     phoneNumber: '567893462653',
     email: 'yung@email.com'
+  })
+
+  console.log('response', response)
+}
+
+const signin = async () => {
+  const response = await login({
+    email: 'yung@email.com',
+    password: "Tioajh@10",
   })
 
   console.log('response', response)

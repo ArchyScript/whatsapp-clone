@@ -1,5 +1,5 @@
 import { getRequest, postRequest } from '@/infrastructures/apiHelper'
-import type { SignupRequest } from '../types'
+import type { SignupRequest, LoginRequest } from '../types'
 
 export const signup = async (payload: SignupRequest) => {
   try {
@@ -11,6 +11,27 @@ export const signup = async (payload: SignupRequest) => {
     throw error
   }
 }
+export const login = async (payload: LoginRequest) => {
+  try {
+    const response = await postRequest('/auth/login', payload)
+    console.log('response', response)
+    return response.data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    throw error
+  }
+}
+
+// export const socialLogin = async (provider:string) => {
+//   try {
+//     const response = await postRequest('/auth/signup')
+//     console.log('response', response)
+//     return response.data
+//   } catch (error) {
+//     console.error('Error fetching data:', error)
+//     throw error
+//   }
+// }
 
 export const getAuthTest = async () => {
   try {

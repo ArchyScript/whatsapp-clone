@@ -51,19 +51,6 @@
                 </div>
                 <Tooltip text="Profile" />
             </div>
-
-
-            <!-- Testing api request  to exstablish connection -->
-            <div class="flex w-full flex-col items-center space-y-3     py-2">
-                <div class="relative">
-                    <div @click="sendMessage"
-                        class="w-10 h-10  cursor-pointer rounded-full flex justify-center items-center text-[#AEBAC1] hover:bg-[#374248] transition duration-300 ease-in-out ">
-                        <Icon name="settings-outline" />
-                    </div>
-
-                </div>
-
-            </div>
         </div>
     </div>
 </template>
