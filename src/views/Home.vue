@@ -4,7 +4,6 @@ import { SideBar, LeftPanel, RightPanel } from '@/components/layout'
 
 <template>
     <div class='bg-[#0C1317] my-6 container mx-auto  '>
-
         <div class='flex overflow-y-hidden h-[calc(100vh-48px)]   min-w-[768px]     bg-[#202C33]  mx-auto   '>
             <!--  max-w-screen-2xl  -->
             <div class='fixed top-0 left-0 w-full h-36 bg-[#0C1317]  -z-30  ' />

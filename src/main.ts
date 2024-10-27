@@ -9,12 +9,11 @@ import App from './App.vue'
 import router from './router'
 
 //
-import { Icon, Tooltip, Tabs } from './components/global'
+import { Icon,   Tabs } from './components/global'
 
 const app = createApp(App)
 
-app.component('Icon', Icon)
-app.component('Tooltip', Tooltip)
+app.component('Icon', Icon) 
 app.component('Tabs', Tabs)
 
 app.use(createPinia())
