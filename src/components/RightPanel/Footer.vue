@@ -5,7 +5,7 @@
       <Icon name="smiley" />
 
       <div class="flex-1">
-        <textarea class="w-full  py-3 px-4  rounded-md focus:outline-none   max-h-[8rem] resize-none  overflow-auto"
+        <textarea class="w-full  py-3 px-4  rounded-md focus:outline-none  !bg-transparent max-h-[8rem] resize-none  overflow-auto"
           rows="1" />
       </div>
 

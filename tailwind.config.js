@@ -1,84 +1,99 @@
 // tailwind.config.js
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: ['class'],  
+  darkMode: ['class'],
   theme: {
-    	container: {
-			center: true,
-			padding: "2rem",
-			screens: {
-				"2xl": "1520px",
-			},
-		},
-    extend: { 
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1520px',
+      },
+    },
+    extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+        border: {
+          light: 'var(--border-light)',
+          dark: 'var(--border-dark)',
+        },
+        input: {
+          light: 'var(--input-light)',
+          dark: 'var(--input-dark)',
+        },
+        ring: {
+          light: 'var(--ring-light)',
+          dark: 'var(--ring-dark)',
+        },
+        main: {
+          light: 'var(--main-light)',
+          dark: 'var(--main-dark)',
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          light: 'var(--secondary-light)',
+          dark: 'var(--secondary-dark)',
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+        panel: {
+          light: 'var(--panel-light)',
+          dark: 'var(--panel-dark)',
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          light: 'var(--accent-light)',
+          dark: 'var(--accent-dark)',
         },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+        hover: {
+          light: 'var(--hover-light)',
+          dark: 'var(--hover-dark)',
         },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+        primary: {
+          light: 'var(--primary-light)',
+          dark: 'var(--primary-dark)',
+          chatLight: 'var(--primary-chat-light)',
+          chatDark: 'var(--primary-chat-dark)',
+        },
+        gray: {
+          primary: {
+            light: 'var(--gray-primary-light)',
+            dark: 'var(--gray-primary-dark)',
+          },
+          secondary: {
+            light: 'var(--gray-secondary-light)',
+            dark: 'var(--gray-secondary-dark)',
+          },
         },
       },
       backgroundColor: {
-        container: "hsl(var(--container))",
-        "gray-primary": "hsl(var(--gray-primary))",
-        "gray-secondary": "hsl(var(--gray-secondary))",
-        "gray-tertiary": "hsl(var(--gray-tertiary))",
-        "left-panel": "hsl(var(--left-panel))",
-        "chat-hover": "hsl(var(--chat-hover))",
-        "green-primary": "hsl(var(--green-primary))",
-        "green-secondary": "hsl(var(--green-secondary))",
-        "green-chat": "hsl(var(--green-chat))",
+        container: 'var(--container)',
+        'gray-primary': 'var(--gray-primary)',
+        'gray-secondary': 'var(--gray-secondary)',
+        'gray-tertiary': 'var(--gray-tertiary)',
+        'left-panel': 'var(--left-panel)',
+        'chat-background': 'var(--chat-background)',
+        'chat-hover': 'var(--chat-hover)',
+        'green-primary': 'var(--green-primary)',
+        'green-chat': 'var(--green-chat)',
       },
       backgroundImage: {
-        "chat-tile-light": "url('/bg-light.png')",
-        "chat-tile-dark": "url('/bg-dark.png')",
+        'chat-tile-light': "url('/bg-light.png')",
+        'chat-tile-dark': "url('/bg-dark.png')",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
@@ -86,4 +101,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};

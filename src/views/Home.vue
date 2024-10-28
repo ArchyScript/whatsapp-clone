@@ -1,5 +1,19 @@
 <script setup lang="ts">
-import { SideBar, LeftPanel, RightPanel } from '@/components/layout' 
+import { ref } from "vue"
+import { SideBar, LeftPanel, RightPanel } from '@/components/layout'
+
+// State to manage selected chat
+const selectedChat = ref(false);
+
+// Function to select a chat
+const selectChat = () => {
+    selectedChat.value = true;
+}
+
+// Function to go back to the left panel
+const goBack = () => {
+    selectedChat.value = false;
+}
 </script>
 
 <template>
@@ -22,7 +36,6 @@ import { SideBar, LeftPanel, RightPanel } from '@/components/layout'
             <section class="h-full  flex-1">
                 <RightPanel />
             </section>
-
         </div>
     </div>
 </template>

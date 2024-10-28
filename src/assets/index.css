@@ -1,107 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
-	:root {
-		--background: 48, 8%, 88%;  
-		--foreground: 222.2 84% 4.9%;
-
-		/* CLASSES ADDED BY US */
-		--container: 0 0 100%;
-		--left-panel: 203, 32%, 10%;
-
-		--gray-primary: 216, 20%, 95%;
-		--gray-secondary: 216, 20%, 95%;
-
-		--left-panel: 100, 100%, 100%;
-		--chat-hover: 180, 5%, 96%;
-
-		--green-primary: 167, 100%, 33%;
-		--green-chat: 111, 91%, 91%;
-		/* CLASSES ADDED BY US */
-
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 84% 4.9%;
-
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 84% 4.9%;
-
-		--primary: 222.2 47.4% 11.2%;
-		--primary-foreground: 210 40% 98%;
-
-		--secondary: 210 40% 96.1%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
-
-		--muted: 210 40% 96.1%;
-		--muted-foreground: 215.4 16.3% 46.9%;
-
-		--accent: 210 40% 96.1%;
-		--accent-foreground: 222.2 47.4% 11.2%;
-
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 210 40% 98%;
-
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
-		--ring: 222.2 84% 4.9%;
-
-		--radius: 0.5rem;
-	}
+  :root {
+  /* Light theme variables */
+	--border-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
+	--input-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
+	--ring-light: hsl(222.2, 84%, 4.9%); /* #070c19 */
+	--main-light: hsl(210, 20%, 95%); /* #ebf0f5 */
+	--secondary-light: hsl(0, 0%, 100%); /* #ffffff */
+	--panel-light: hsl(0, 0%, 100%); /* #ffffff */
+	--accent-light: hsl(180, 5%, 96%); /* #f2f7f7 */
+	--hover-light: hsl(180, 5%, 96%); /* #f2f7f7 */
+	--primary-light: hsl(167, 100%, 33%); /* #00a569 */
+	--primary-chat-light: hsl(111, 91%, 91%); /* #e5f9e5 */
+	--gray-primary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
+	--gray-secondary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
 
 	.dark {
-		--background: 202, 31%, 7%; /* CHANGED */
-		--foreground: 210 40% 98%;
-
-		/* CLASSES ADDED BY US: */
-		--container: 202, 31%, 7%;
-
-		--gray-primary: 202, 23%, 16%;
-		--gray-secondary: 202, 22%, 17%;
-
-		--left-panel: 203, 32%, 10%;
-		--chat-hover: 202, 23%, 16%;
-
-		--green-primary: 167, 100%, 33%;
-		--green-secondary: 165, 100%, 39%;
-		--green-chat: 169, 100%, 18%;
-
-		--gray-tertiary: 203, 22%, 21%;
-		/* CLASSES ADDED BY US */
-
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
-
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
-
-		--primary: 210 40% 98%;
-		--primary-foreground: 222.2 47.4% 11.2%;
-
-		--secondary: 217.2 32.6% 17.5%;
-		--secondary-foreground: 210 40% 98%;
-
-		--muted: 217.2 32.6% 17.5%;
-		--muted-foreground: 215 20.2% 65.1%;
-
-		--accent: 217.2 32.6% 17.5%;
-		--accent-foreground: 210 40% 98%;
-
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 210 40% 98%;
-
-		--border: 217.2 32.6% 17.5%;
-		--input: 217.2 32.6% 17.5%;
-		--ring: 212.7 26.8% 83.9%;
+		/* Dark theme variables */
+		--border-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
+		--input-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
+		--ring-dark: hsl(212.7, 26.8%, 83.9%); /* #d7dee4 */
+		--main-dark: hsl(202, 31%, 7%); /* #0d0f12 */
+		--secondary-dark: hsl(210, 40%, 98%); /* #f5f9ff */
+		--panel-dark: hsl(203, 32%, 10%); /* #151b23 */
+		--accent-dark: hsl(202, 23%, 16%); /* #263139 */
+		--hover-dark: hsl(202, 23%, 16%); /* #263139 */
+		--primary-dark: hsl(169, 100%, 18%); /* #053824 */
+		--primary-chat-dark: hsl(165, 100%, 39%); /* #1cc47b */
+		--gray-primary-dark: hsl(202, 23%, 16%); /* #263139 */
+		--gray-secondary-dark: hsl(202, 22%, 17%); /* #29363f */
 	}
+}
 }
 
 @layer base {
 	* {
-		@apply border-border;
+		@apply border-border-light;
 	}
 	body {
-		@apply bg-[#0C1317]  text-foreground  overflow-y-hidden  ;
+		@apply bg-[#0C1317]   overflow-y-hidden  ;
 	} 
 }
 

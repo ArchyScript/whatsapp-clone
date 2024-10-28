@@ -1,99 +1,96 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
-	:root {
-		--background: 48, 8%, 88%; /* CHANGED */
-		--foreground: 222.2 84% 4.9%;
+  :root {
+		/* --light-main: #e9ecee;  
+--light-secondary: #ffffff ;
+--light-panel: #ffffff;  
+--light-accent: #f2f5f7;  
+--light-hover: #f2f5f7;  
+--light-border: #cdd0d5; 
+--light-input: #cdd0d5; 
+--light-ring: #1a1f23; 
+--light-gray-primary: #d7d8d9;  
+--light-gray-secondary: #d7d8d9;  
+--light-green-primary: #008069; 
+--light-green-chat: #e5f8e5; 
 
-		/* CLASSES ADDED BY US */
-		--container: 0 0 100%;
-		--left-panel: 203, 32%, 10%;
+ 
+--dark-main: #0e141a; 
+--dark-secondary: #1a1f23;  
+--dark-panel: #1a232b; 
+--dark-accent: #2d3c4c;  
+--dark-hover: #2d3c4c;  
+--dark-border: #2a3a4d; 
+--dark-input: #2a3a4d ; 
+--dark-ring: #e1e8ed;  
+--dark-gray-primary: #2d3c4c;  
+--dark-gray-secondary: #2b3a44;  
+--dark-green-primary: #004f2e; 
+--dark-green-chat: #00a884 ; */
 
-		--gray-primary: 216, 20%, 95%;
-		--gray-secondary: 216, 20%, 95%;
+    /* Backgrounds */
+    --background:  #e9ecee;  
+    --background-dark: 202, 31%, 7%;  
+ 
+    --foreground: 222.2 84% 4.9%;
+    --foreground-dark: 210 40% 98%;
 
-		--left-panel: 100, 100%, 100%;
-		--chat-hover: 180, 5%, 96%;
+ 
+    --left-panel-light: 0 0 100%;  
+    --left-panel-dark: 203, 32%, 10%;  
 
-		--green-primary: 167, 100%, 33%;
-		--green-chat: 111, 91%, 91%;
-		/* CLASSES ADDED BY US */
+ 
+    --chat-background-light: 180, 5%, 96%;
+    --chat-background-dark: 202, 23%, 16%;
+    --chat-hover-light: 180, 5%, 96%;
+    --chat-hover-dark: 202, 23%, 16%;
+ 
+    --green-primary-light: 167, 100%, 33%;
+    --green-primary-dark: 169, 100%, 18%;
+    --green-chat-light: 111, 91%, 91%;
+    --green-chat-dark: 165, 100%, 39%;
 
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 84% 4.9%;
+ 
+    --gray-primary-light: 216, 20%, 95%;
+    --gray-primary-dark: 202, 23%, 16%;
+    --gray-secondary-light: 216, 20%, 95%;
+    --gray-secondary-dark: 202, 22%, 17%;
+    --gray-tertiary-dark: 203, 22%, 21%;
+ 
+    --card-light: 0 0% 100%;
+    --card-dark: 222.2 84% 4.9%;
+    --popover-light: 0 0% 100%;
+    --popover-dark: 222.2 84% 4.9%;
+    --primary-light: 222.2 47.4% 11.2%;
+    --primary-dark: 210 40% 98%;
+    --border-light: 214.3 31.8% 91.4%;
+    --border-dark: 217.2 32.6% 17.5%;
+    --input-light: 214.3 31.8% 91.4%;
+    --input-dark: 217.2 32.6% 17.5%;
+    --ring-light: 222.2 84% 4.9%;
+    --ring-dark: 212.7 26.8% 83.9%;
+  }
 
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 84% 4.9%;
-
-		--primary: 222.2 47.4% 11.2%;
-		--primary-foreground: 210 40% 98%;
-
-		--secondary: 210 40% 96.1%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
-
-		--muted: 210 40% 96.1%;
-		--muted-foreground: 215.4 16.3% 46.9%;
-
-		--accent: 210 40% 96.1%;
-		--accent-foreground: 222.2 47.4% 11.2%;
-
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 210 40% 98%;
-
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
-		--ring: 222.2 84% 4.9%;
-
-		--radius: 0.5rem;
-	}
-
-	.dark {
-		--background: 202, 31%, 7%; /* CHANGED */
-		--foreground: 210 40% 98%;
-
-		/* CLASSES ADDED BY US: */
-		--container: 202, 31%, 7%;
-
-		--gray-primary: 202, 23%, 16%;
-		--gray-secondary: 202, 22%, 17%;
-
-		--left-panel: 203, 32%, 10%;
-		--chat-hover: 202, 23%, 16%;
-
-		--green-primary: 167, 100%, 33%;
-		--green-secondary: 165, 100%, 39%;
-		--green-chat: 169, 100%, 18%;
-
-		--gray-tertiary: 203, 22%, 21%;
-		/* CLASSES ADDED BY US */
-
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
-
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
-
-		--primary: 210 40% 98%;
-		--primary-foreground: 222.2 47.4% 11.2%;
-
-		--secondary: 217.2 32.6% 17.5%;
-		--secondary-foreground: 210 40% 98%;
-
-		--muted: 217.2 32.6% 17.5%;
-		--muted-foreground: 215 20.2% 65.1%;
-
-		--accent: 217.2 32.6% 17.5%;
-		--accent-foreground: 210 40% 98%;
-
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 210 40% 98%;
-
-		--border: 217.2 32.6% 17.5%;
-		--input: 217.2 32.6% 17.5%;
-		--ring: 212.7 26.8% 83.9%;
-	}
+  .dark {
+    --background: var(--background-dark);
+    --foreground: var(--foreground-dark);
+    --left-panel: var(--left-panel-dark);
+    --chat-background: var(--chat-background-dark);
+    --chat-hover: var(--chat-hover-dark);
+    --green-primary: var(--green-primary-dark);
+    --green-chat: var(--green-chat-dark);
+    --gray-primary: var(--gray-primary-dark);
+    --gray-secondary: var(--gray-secondary-dark);
+    --gray-tertiary: var(--gray-tertiary-dark);
+    --card: var(--card-dark);
+    --popover: var(--popover-dark);
+    --primary: var(--primary-dark);
+    --border: var(--border-dark);
+    --input: var(--input-dark);
+    --ring: var(--ring-dark);
+  }
 }
 
 @layer base {
@@ -101,14 +98,23 @@
 		@apply border-border;
 	}
 	body {
-		@apply bg-background text-foreground;
-	}
+		@apply bg-[#0C1317]  text-foreground  overflow-y-hidden  ;
+	} 
 }
 
-/* WE ADDED => DARK MODE THIN SCROLLBAR */
+/* Ant Design */
+/* Tooltip */
+.ant-tooltip-inner {
+		@apply !bg-[#202C33] !text-white;
+}
+ .ant-tooltip .ant-tooltip-arrow::before, .ant-tooltip .ant-tooltip-arrow::after   {
+		@apply !bg-[#202C33]  ;
+}
+
+/*   DARK MODE THIN SCROLLBAR */
 @layer components {
 	::-webkit-scrollbar {
-		width: 8px;
+		width: 6px;
 	}
 	::-webkit-scrollbar-thumb {
 		background-color: hsl(var(--gray-primary));
@@ -117,4 +123,17 @@
 	::-webkit-scrollbar-track {
 		background-color: hsl(var(--container));
 	}
+	
+::-webkit-scrollbar {
+  width: 10px; 
+} 
+::-webkit-scrollbar-thumb {
+  background-color: #333936; 
+  margin: 2px;
+  border: 3px solid #0c1317; 
+}
+ 
+::-webkit-scrollbar-track {
+  background-color: #0c1317 !important;   
+}
 }
