@@ -14,6 +14,41 @@ const selectChat = () => {
 const goBack = () => {
     selectedChat.value = false;
 }
+
+/*
+
+    <section class="h-full w-1/3 flex min-w-[420px] ">
+        <div class="w-16 h-full px-3 ">
+            <SideBar />
+        </div>
+
+        <div class="h-full flex-1 truncate">
+            <LeftPanel />
+        </div>
+    </section>
+
+    <!-- Right panel -->
+    <section class="h-full  flex-1">
+        <RightPanel />
+    </section>
+    <!-- Sidebar -->
+      <aside class="fixed left-0 top-0 w-full md:w-1/3 h-full z-10">
+        <SideBar />
+      </aside>
+
+      <section class="h-full flex flex-col md:flex-row flex-1">
+
+        <!-- Left Panel (only shown if no chat is selected) -->
+        <div v-if="selectedChat" class="h-full flex-1 min-w-[420px]">
+          <LeftPanel />
+        </div>
+
+        <!-- Right Panel (only shown if a chat is selected) -->
+        <div v-if="selectedChat" class="h-full flex-1">
+          <RightPanel @goBack="goBack" />
+        </div>
+      </section>
+*/
 </script>
 
 <template>
@@ -22,20 +57,21 @@ const goBack = () => {
             <!--  max-w-screen-2xl  -->
             <div class='fixed top-0 left-0 w-full h-36 bg-[#0C1317]  -z-30  ' />
 
-            <section class="h-full w-1/3 flex min-w-[420px] ">
-                <div class="w-16 h-full px-3 ">
-                    <SideBar />
-                </div>
+             
+    <section class="h-full w-1/3 flex min-w-[420px] ">
+        <div class="w-16 h-full px-3 ">
+            <SideBar />
+        </div>
 
-                <div class="h-full flex-1 truncate">
-                    <LeftPanel />
-                </div>
-            </section>
+        <div class="h-full flex-1 truncate">
+            <LeftPanel />
+        </div>
+    </section>
 
-            <!-- Right panel -->
-            <section class="h-full  flex-1">
-                <RightPanel />
-            </section>
+    <!-- Right panel -->
+    <section class="h-full  flex-1">
+        <RightPanel />
+    </section>
         </div>
     </div>
 </template>
