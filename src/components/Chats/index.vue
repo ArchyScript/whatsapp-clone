@@ -25,11 +25,12 @@ import { LeftPanelFooter } from "@/components/Common"
 import { chats } from "@/db"
 
 import { useAppStore } from "@/stores/app"
-const { setShowChat } = useAppStore()
+const { setShowChat, setSelectedChat } = useAppStore()
 
 const handleSelectChat = (chat: ChatType) => {
   console.log("chat", chat)
   // Handle chat selection
+  setSelectedChat(chat)
   setShowChat(true)
 }
 </script>

@@ -28,16 +28,20 @@
       <Icon name="video-call" />
       <Icon name="menu" />
     </div>
+    <!-- {{ selectedChat }} -->
   </header>
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue"
 import { useAppStore } from "@/stores/app"
-const { setShowChat } = useAppStore()
+const { setShowChat, selectedChat } = useAppStore()
 interface Emit {
   (event: "back"): void
 }
 const emit = defineEmits<Emit>()
+
+const chat = computed(() => selectedChat)
 
 const showChat = () => {
   setShowChat(false)

@@ -19,13 +19,35 @@ const getHeight = () => {
     fullHeightDiv.value.style.height = `${adjustedHeight}px`
   }
 }
+
+const enterFullScreenAndMeasure = async () => {
+  try {
+    await document.documentElement.requestFullscreen()
+    const fullScreenHeight = window.innerHeight
+
+    console.log("fullScreenHeight", fullScreenHeight)
+    // Exit fullscreen
+    document.exitFullscreen()
+
+    // Calculate the difference
+    const statusBarHeight = window.screen.height - fullScreenHeight
+    console.log("Estimated Status Bar Height:", statusBarHeight)
+  } catch (error) {
+    console.error("Fullscreen mode could not be enabled:", error)
+  }
+}
+
 onMounted(() => {
+  // enterFullScreenAndMeasure()
   getHeight()
 })
 // window.addEventListener("resize", getHeight)
 </script>
 
 <template>
+  <!-- <button @click="enterFullScreenAndMeasure" class="text-white bg-green-600 py-3 px-6">
+    Measure Status Bar Height
+  </button> -->
   <div ref="fullHeightDiv">
     <RouterView />
   </div>
