@@ -1,5 +1,42 @@
+<script setup lang="ts">
+import { defineProps } from "vue"
+import { UnreadMessageCount, ChatAvatar } from "@/components/Common"
+import type { ChatType, ChatStatus } from "@/types"
+
+interface Props {
+  chat: ChatType
+}
+interface Emit {
+  (event: "click", payload: ChatType): void
+}
+const props = defineProps<Props>()
+const emit = defineEmits<Emit>()
+
+const chatClasses: Record<ChatStatus, { class: string; icon: string }> = {
+  sent: {
+    class: "text-gray-500",
+    icon: "status-check"
+  },
+  delivered: {
+    class: "text-gray-500",
+    icon: "status-dblcheck"
+  },
+  read: {
+    class: "text-blue-500",
+    icon: "status-dblcheck"
+  }
+}
+
+const selectChat = () => {
+  emit("click", props.chat)
+}
+</script>
+
 <template>
-  <div class="flex items-center truncate hover:bg-[#2A3942] cursor-pointer" @click="selectChat">
+  <div
+    class="flex items-center truncate hover:bg-[#2A3942] cursor-pointer select-none"
+    @click="selectChat"
+  >
     <!-- Image container -->
     <div class="p-3">
       <!-- Chat -->
@@ -99,38 +136,5 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-import { defineProps } from "vue"
-import { UnreadMessageCount, ChatAvatar } from "@/components/Common"
-import type { ChatType, ChatStatus } from "@/types"
-
-interface Props {
-  chat: ChatType
-}
-interface Emit {
-  (event: "click", payload: ChatType): void
-}
-const props = defineProps<Props>()
-const emit = defineEmits<Emit>()
-
-const chatClasses: Record<ChatStatus, { class: string; icon: string }> = {
-  sent: {
-    class: "text-gray-500",
-    icon: "status-check"
-  },
-  delivered: {
-    class: "text-gray-500",
-    icon: "status-dblcheck"
-  },
-  read: {
-    class: "text-blue-500",
-    icon: "status-dblcheck"
-  }
-}
-
-const selectChat = () => {
-  emit("click", props.chat)
-}
-</script>
 
 <style scoped></style>

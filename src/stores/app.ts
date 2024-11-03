@@ -1,16 +1,20 @@
 // src/stores/appStore.ts
+import type { ChatType } from "@/types"
 import { ref, computed } from "vue"
 import { defineStore } from "pinia"
 
 export const useAppStore = defineStore("app", () => {
   // Reactive state
   const activeTab = ref<string | null>("chats")
-  const selectedChat = ref<string | null>("chats")
-  const showChat = ref<boolean>(true)
+  const selectedChat = ref<ChatType>()
+  const showChat = ref<boolean>(false)
 
   // Function to set the active tab
   const setActiveTab = (tab: string) => {
     activeTab.value = tab
+  }
+  const setSelectedChat = (chat: ChatType) => {
+    selectedChat.value = chat
   }
   const setShowChat = (value: boolean) => {
     showChat.value = value
@@ -26,6 +30,7 @@ export const useAppStore = defineStore("app", () => {
     setActiveTab,
     resetActiveTab,
     showChat,
-    setShowChat
+    setShowChat,
+    setSelectedChat
   }
 })

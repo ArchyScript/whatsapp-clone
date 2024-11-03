@@ -19,7 +19,7 @@ const showChat = computed(() => useAppStore().showChat)
           class="h-full flex w-full md:w-1/3 min-w-[420px] lg:min-w-[460px]"
           :class="showChat && 'hidden md:flex'"
         >
-          <div class="w-16 h-full px-3">
+          <div class="w-16 h-full">
             <SideBar />
           </div>
 
