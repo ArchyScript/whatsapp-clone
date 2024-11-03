@@ -3,79 +3,80 @@
 @tailwind utilities;
 @layer base {
   :root {
-  /* Light theme variables */
-	--border-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
-	--input-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
-	--ring-light: hsl(222.2, 84%, 4.9%); /* #070c19 */
-	--main-light: hsl(210, 20%, 95%); /* #ebf0f5 */
-	--secondary-light: hsl(0, 0%, 100%); /* #ffffff */
-	--panel-light: hsl(0, 0%, 100%); /* #ffffff */
-	--accent-light: hsl(180, 5%, 96%); /* #f2f7f7 */
-	--hover-light: hsl(180, 5%, 96%); /* #f2f7f7 */
-	--primary-light: hsl(167, 100%, 33%); /* #00a569 */
-	--primary-chat-light: hsl(111, 91%, 91%); /* #e5f9e5 */
-	--gray-primary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
-	--gray-secondary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
+    /* Light theme variables */
+    --border-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
+    --input-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
+    --ring-light: hsl(222.2, 84%, 4.9%); /* #070c19 */
+    --main-light: hsl(210, 20%, 95%); /* #ebf0f5 */
+    --secondary-light: hsl(0, 0%, 100%); /* #ffffff */
+    --panel-light: hsl(0, 0%, 100%); /* #ffffff */
+    --accent-light: hsl(180, 5%, 96%); /* #f2f7f7 */
+    --hover-light: hsl(180, 5%, 96%); /* #f2f7f7 */
+    --primary-light: hsl(167, 100%, 33%); /* #00a569 */
+    --primary-chat-light: hsl(111, 91%, 91%); /* #e5f9e5 */
+    --gray-primary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
+    --gray-secondary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
 
-	.dark {
-		/* Dark theme variables */
-		--border-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
-		--input-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
-		--ring-dark: hsl(212.7, 26.8%, 83.9%); /* #d7dee4 */
-		--main-dark: hsl(202, 31%, 7%); /* #0d0f12 */
-		--secondary-dark: hsl(210, 40%, 98%); /* #f5f9ff */
-		--panel-dark: hsl(203, 32%, 10%); /* #151b23 */
-		--accent-dark: hsl(202, 23%, 16%); /* #263139 */
-		--hover-dark: hsl(202, 23%, 16%); /* #263139 */
-		--primary-dark: hsl(169, 100%, 18%); /* #053824 */
-		--primary-chat-dark: hsl(165, 100%, 39%); /* #1cc47b */
-		--gray-primary-dark: hsl(202, 23%, 16%); /* #263139 */
-		--gray-secondary-dark: hsl(202, 22%, 17%); /* #29363f */
-	}
-}
+    .dark {
+      /* Dark theme variables */
+      --border-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
+      --input-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
+      --ring-dark: hsl(212.7, 26.8%, 83.9%); /* #d7dee4 */
+      --main-dark: hsl(202, 31%, 7%); /* #0d0f12 */
+      --secondary-dark: hsl(210, 40%, 98%); /* #f5f9ff */
+      --panel-dark: hsl(203, 32%, 10%); /* #151b23 */
+      --accent-dark: hsl(202, 23%, 16%); /* #263139 */
+      --hover-dark: hsl(202, 23%, 16%); /* #263139 */
+      --primary-dark: hsl(169, 100%, 18%); /* #053824 */
+      --primary-chat-dark: hsl(165, 100%, 39%); /* #1cc47b */
+      --gray-primary-dark: hsl(202, 23%, 16%); /* #263139 */
+      --gray-secondary-dark: hsl(202, 22%, 17%); /* #29363f */
+    }
+  }
 }
 
 @layer base {
-	* {
-		@apply border-border-light;
-	}
-	body {
-		@apply bg-[#0C1317]   overflow-y-hidden  ;
-	} 
+  * {
+    @apply border-border-light;
+  }
+  html,body {
+    @apply bg-[#0C1317]   overflow-y-hidden ;
+  } 
 }
 
 /* Ant Design */
 /* Tooltip */
 .ant-tooltip-inner {
-		@apply !bg-[#202C33] !text-white;
+  @apply !bg-[#202C33] !text-white;
 }
- .ant-tooltip .ant-tooltip-arrow::before, .ant-tooltip .ant-tooltip-arrow::after   {
-		@apply !bg-[#202C33]  ;
+.ant-tooltip .ant-tooltip-arrow::before,
+.ant-tooltip .ant-tooltip-arrow::after {
+  @apply !bg-[#202C33];
 }
 
 /*   DARK MODE THIN SCROLLBAR */
 @layer components {
-	::-webkit-scrollbar {
-		width: 6px;
-	}
-	::-webkit-scrollbar-thumb {
-		background-color: hsl(var(--gray-primary));
-		border-radius: 4px;
-	}
-	::-webkit-scrollbar-track {
-		background-color: hsl(var(--container));
-	}
-	
-::-webkit-scrollbar {
-  width: 10px; 
-} 
-::-webkit-scrollbar-thumb {
-  background-color: #333936; 
-  margin: 2px;
-  border: 3px solid #0c1317; 
-}
- 
-::-webkit-scrollbar-track {
-  background-color: #0c1317 !important;   
-}
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--gray-primary));
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--container));
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #333936;
+    margin: 2px;
+    border: 3px solid #0c1317;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #0c1317 !important;
+  }
 }

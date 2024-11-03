@@ -1,16 +1,16 @@
 <template>
-  <div class=" h-full truncate ">
+  <div class="h-full truncate">
     <!-- Header -->
     <ChatHeader />
 
     <!-- Chats -->
-    <div class="!overflow-auto h-full pb-40 truncate ">
+    <div class="!overflow-auto h-full pb-40 truncate">
       <!-- Archive Counter -->
       <ArchiveCounter />
 
       <!-- Chats -->
       <div v-for="chat in chats" class="">
-        <Chat :chat />
+        <Chat :chat @click="handleSelectChat" />
       </div>
 
       <LeftPanelFooter title="personal messages" />
@@ -19,8 +19,17 @@
 </template>
 
 <script setup lang="ts">
-import { Chat, ArchiveCounter, ChatHeader } from '@/components/Chats'
+import { Chat, ArchiveCounter, ChatHeader } from "@/components/Chats"
+import type { ChatType } from "@/types"
 import { LeftPanelFooter } from "@/components/Common"
 import { chats } from "@/db"
 
+import { useAppStore } from "@/stores/app"
+const { setShowChat } = useAppStore()
+
+const handleSelectChat = (chat: ChatType) => {
+  console.log("chat", chat)
+  // Handle chat selection
+  setShowChat(true)
+}
 </script>

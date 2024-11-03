@@ -1,77 +1,62 @@
 <script setup lang="ts">
-import { ref } from "vue"
-import { SideBar, LeftPanel, RightPanel } from '@/components/layout'
+import { ref, onMounted, computed } from "vue"
+import { SideBar, LeftPanel, RightPanel } from "@/components/layout"
 
-// State to manage selected chat
-const selectedChat = ref(false);
+import { useAppStore } from "@/stores/app"
+const { setShowChat } = useAppStore()
 
-// Function to select a chat
-const selectChat = () => {
-    selectedChat.value = true;
-}
-
-// Function to go back to the left panel
-const goBack = () => {
-    selectedChat.value = false;
-}
-
-/*
-
-    <section class="h-full w-1/3 flex min-w-[420px] ">
-        <div class="w-16 h-full px-3 ">
-            <SideBar />
-        </div>
-
-        <div class="h-full flex-1 truncate">
-            <LeftPanel />
-        </div>
-    </section>
-
-    <!-- Right panel -->
-    <section class="h-full  flex-1">
-        <RightPanel />
-    </section>
-    <!-- Sidebar -->
-      <aside class="fixed left-0 top-0 w-full md:w-1/3 h-full z-10">
-        <SideBar />
-      </aside>
-
-      <section class="h-full flex flex-col md:flex-row flex-1">
-
-        <!-- Left Panel (only shown if no chat is selected) -->
-        <div v-if="selectedChat" class="h-full flex-1 min-w-[420px]">
-          <LeftPanel />
-        </div>
-
-        <!-- Right Panel (only shown if a chat is selected) -->
-        <div v-if="selectedChat" class="h-full flex-1">
-          <RightPanel @goBack="goBack" />
-        </div>
-      </section>
-*/
+const showChat = computed(() => useAppStore().showChat)
 </script>
 
 <template>
-    <div class='bg-[#0C1317] my-6 container mx-auto  '>
-        <div class='flex overflow-y-hidden h-[calc(100vh-48px)]   min-w-[768px]     bg-[#202C33]  mx-auto   '>
-            <!--  max-w-screen-2xl  -->
-            <div class='fixed top-0 left-0 w-full h-36 bg-[#0C1317]  -z-30  ' />
+  <div class="overflow-y-hidden bg-[#0C1317] md:p-6 container mx-auto h-screen w-full">
+    <!--  max-w-screen-2xl  -->
+    <!-- <div class="fixed top-0 left-0 w-full h-36 bg-white hidden md:block" /> -->
 
-             
-    <section class="h-full w-1/3 flex min-w-[420px] ">
-        <div class="w-16 h-full px-3 ">
+    <div class="flex overflow-y-hidden md:min-w-[768px] border-4 border-purple-600 mx-auto h-full">
+      <transition name="slide-fade">
+        <section
+          class="h-full flex w-full md:w-1/3 min-w-[420px] lg:min-w-[460px]"
+          :class="showChat && 'hidden md:flex'"
+        >
+          <div class="w-16 h-full px-3">
             <SideBar />
-        </div>
+          </div>
 
-        <div class="h-full flex-1 truncate">
+          <div class="h-full flex-1 truncate">
             <LeftPanel />
-        </div>
-    </section>
-
-    <!-- Right panel -->
-    <section class="h-full  flex-1">
-        <RightPanel />
-    </section>
-        </div>
+          </div>
+        </section>
+      </transition>
+      <transition name="slide-fade">
+        <section class="h-full w-full flex-1 hidden md:block" :class="showChat && '!block '">
+          <RightPanel />
+        </section>
+      </transition>
     </div>
+  </div>
 </template>
+
+<style scoped>
+/* Animation for sliding and fading */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.6s ease;
+}
+.slide-fade-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-fade-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-fade-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-fade-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+</style>
