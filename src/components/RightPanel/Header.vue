@@ -1,7 +1,12 @@
 <template>
   <header class="flex space-x-3 items-center px-6 py-3 bg-[#202C33]">
+    <!-- back button for mobile screen alone -->
+    <div class="p-1.5 pl-2 rounded-full w-10 inline-block md:hidden" role="button ">
+      <Icon name="back" class="text-green-700" @click="showChat" />
+    </div>
+
     <!-- Profile Section -->
-    <div class="h-10 w-10 rounded-full border overflow-hidden flex items-center justify-center ">
+    <div class="h-10 w-10 rounded-full border overflow-hidden flex items-center justify-center">
       <img src="@/assets/images/placeholder.png" class="h-full w-full rounded-full" />
     </div>
 
@@ -14,7 +19,8 @@
     <!-- Action Buttons Section -->
     <div class="flex space-x-2 items-center">
       <div
-        class="w-8 h-8  p-0.5 cursor-pointer rounded-full flex justify-center items-center border   transition duration-300 ease-in-out ">
+        class="w-8 h-8 p-0.5 cursor-pointer rounded-full flex justify-center items-center border transition duration-300 ease-in-out"
+      >
         <img src="@/assets/images/whatsapp.png" class="h-full w-full rounded-full" />
       </div>
 
@@ -25,6 +31,15 @@
   </header>
 </template>
 
-
 <script setup lang="ts">
+import { useAppStore } from "@/stores/app"
+const { setShowChat } = useAppStore()
+interface Emit {
+  (event: "back"): void
+}
+const emit = defineEmits<Emit>()
+
+const showChat = () => {
+  setShowChat(false)
+}
 </script>
