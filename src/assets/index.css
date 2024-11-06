@@ -3,7 +3,20 @@
 @tailwind utilities;
 @layer base {
   :root {
+    /* Light Theme */
+    --whatsapp-accent-green-dark: hsl(164, 98%, 24%); /* #017561 */
+    --whatsapp-bg-light: hsl(210, 29%, 96%); /* #F0F2F5 */
+    --whatsapp-gray-dark-base: hsl(202, 12%, 42%); /* #576872 */
+    --whatsapp-accent-primary-light: hsl(165, 100%, 33%); /* #00A481 */
+    --whatsapp-bg-deep-light: hsl(198, 29%, 10%); /* #111B21 */
+    --whatsapp-accent-green-soft: hsl(122, 87%, 91%); /* #E7FCE3 */
+    --whatsapp-accent-green: hsl(164, 100%, 26%); /* #008069 */
+    --whatsapp-light-muted: hsl(210, 28%, 93%); /* #E9EDEF */
+    --whatsapp-charcoal-base: hsl(196, 17%, 29%); /* #3B4A54 */
+    --whatsapp-gray-muted-base: hsl(203, 12%, 39%); /* #54656F */
+
     /* Light theme variables */
+    --test: hsl(47, 92%, 29%); /* #e8eff6 */
     --border-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
     --input-light: hsl(214.3, 31.8%, 91.4%); /* #e8eff6 */
     --ring-light: hsl(222.2, 84%, 4.9%); /* #070c19 */
@@ -16,22 +29,35 @@
     --primary-chat-light: hsl(111, 91%, 91%); /* #e5f9e5 */
     --gray-primary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
     --gray-secondary-light: hsl(216, 20%, 95%); /* #ebf0f5 */
+  }
+  .dark {
+    /* Dark theme variables */
+    --test: hsl(240, 92%, 36%); /* #e8eff6 */
+    --border-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
+    --input-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
+    --ring-dark: hsl(212.7, 26.8%, 83.9%); /* #d7dee4 */
+    --main-dark: hsl(202, 31%, 7%); /* #0d0f12 */
+    --secondary-dark: hsl(210, 40%, 98%); /* #f5f9ff */
+    --panel-dark: hsl(203, 32%, 10%); /* #151b23 */
+    --accent-dark: hsl(202, 23%, 16%); /* #263139 */
+    --hover-dark: hsl(202, 23%, 16%); /* #263139 */
+    --primary-dark: hsl(169, 100%, 18%); /* #053824 */
+    --primary-chat-dark: hsl(165, 100%, 39%); /* #1cc47b */
+    --gray-primary-dark: hsl(202, 23%, 16%); /* #263139 */
+    --gray-secondary-dark: hsl(202, 22%, 17%); /* #29363f */
 
-    .dark {
-      /* Dark theme variables */
-      --border-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
-      --input-dark: hsl(217.2, 32.6%, 17.5%); /* #2b3b47 */
-      --ring-dark: hsl(212.7, 26.8%, 83.9%); /* #d7dee4 */
-      --main-dark: hsl(202, 31%, 7%); /* #0d0f12 */
-      --secondary-dark: hsl(210, 40%, 98%); /* #f5f9ff */
-      --panel-dark: hsl(203, 32%, 10%); /* #151b23 */
-      --accent-dark: hsl(202, 23%, 16%); /* #263139 */
-      --hover-dark: hsl(202, 23%, 16%); /* #263139 */
-      --primary-dark: hsl(169, 100%, 18%); /* #053824 */
-      --primary-chat-dark: hsl(165, 100%, 39%); /* #1cc47b */
-      --gray-primary-dark: hsl(202, 23%, 16%); /* #263139 */
-      --gray-secondary-dark: hsl(202, 22%, 17%); /* #29363f */
-    }
+    /* dark */
+    --whatsapp-bg-dark: hsl(197, 17%, 17%); /* #202C33 */
+    --whatsapp-bg-deep: hsl(198, 29%, 10%); /* #111B21 */
+    --whatsapp-bg-medium: hsl(198, 23%, 17%); /* #222E35 */
+    --whatsapp-accent-bright: hsl(165, 78%, 44%); /* #06CF9C */
+    --whatsapp-accent-dark: hsl(165, 56%, 20%); /* #0A332C */
+    --whatsapp-accent-primary: hsl(165, 100%, 33%); /* #00A884 */
+    --whatsapp-teal-dark: hsl(187, 73%, 21%); /* #0A545F */
+    --whatsapp-light-base: hsl(210, 28%, 93%); /* #E9EDEF */
+    --whatsapp-gray-light-muted: hsl(200, 8%, 58%); /* #879399 */
+    --whatsapp-dark-muted: hsl(198, 17%, 21%); /* #26353D */
+    --whatsapp-gray-base: hsl(204, 16%, 85%); /* #D1D7DB */
   }
 }
 

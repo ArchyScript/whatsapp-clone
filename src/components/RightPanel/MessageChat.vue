@@ -15,14 +15,14 @@
           </div>
         </div>
 
-        <div
+        <!-- <div
           class="bg-[#1D282F] cursor-pointer text-[10px] p-2 border-l-2 border-green-700 rounded-[3px]"
         >
           fjjdfhfd ewewe ewewewe232322wwee wewewewewewewewew we fjjdfhfd ewewe ewewewe232322wwee
           wewewewewewewewe
-        </div>
+        </div> -->
 
-        <div class="p-1">
+        <div class="p-1 text-test dark:text-test">
           <p class="text-xs">Hey, how are you doing?</p>
 
           <div class="flex items-center space-x-2">
@@ -34,4 +34,12 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface Props {
+  name: string
+}
+
+const props: Props = defineProps()
+
+// props
+</script>

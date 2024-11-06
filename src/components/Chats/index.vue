@@ -8,6 +8,8 @@
       <!-- Archive Counter -->
       <ArchiveCounter />
 
+      <NoConnection/>
+
       <!-- Chats -->
       <div v-for="chat in chats" class="">
         <Chat :chat @click="handleSelectChat" />
@@ -21,7 +23,7 @@
 <script setup lang="ts">
 import { Chat, ArchiveCounter, ChatHeader } from "@/components/Chats"
 import type { ChatType } from "@/types"
-import { LeftPanelFooter } from "@/components/Common"
+import { LeftPanelFooter,NoConnection } from "@/components/Common"
 import { chats } from "@/db"
 
 import { useAppStore } from "@/stores/app"

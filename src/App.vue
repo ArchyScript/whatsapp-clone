@@ -9,12 +9,6 @@ const getHeight = () => {
   const viewportHeight = window.innerHeight
   const addressBarHeight = screenHeight - viewportHeight
   const adjustedHeight = viewportHeight - addressBarHeight
-  console.log("test")
-  console.log("screenHeight", screenHeight)
-  console.log("viewportHeight", viewportHeight)
-  console.log("addressBarHeight", addressBarHeight)
-  console.log("adjustedHeight", adjustedHeight)
-
   if (fullHeightDiv.value) {
     fullHeightDiv.value.style.height = `${adjustedHeight}px`
   }
@@ -25,7 +19,6 @@ const enterFullScreenAndMeasure = async () => {
     await document.documentElement.requestFullscreen()
     const fullScreenHeight = window.innerHeight
 
-    console.log("fullScreenHeight", fullScreenHeight)
     // Exit fullscreen
     document.exitFullscreen()
 
