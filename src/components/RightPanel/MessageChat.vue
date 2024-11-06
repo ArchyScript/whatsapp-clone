@@ -4,14 +4,15 @@
 
     <div class="flex-1 flex relative w-full">
       <span class="absolute top-0 -left-2 block text-[#202C33]"> <Icon name="tail-in" /> </span>
+
       <div
         class="flex flex-col relative px-1 py-1 bg-[#202C33] w-full rounded-[5px] rounded-tl-none"
       >
         <div class="flex justify-between items-center space-x-3 px-1">
           <p class="text-[10px] font-semibold">test</p>
-          <span class="text-[10px]">
-            <Icon name="chevron" class="!h-3" />
-          </span>
+          <div class="flex items-center">
+            <Icon name="chevron" class="!h-5 rotate-90" />
+          </div>
         </div>
 
         <div

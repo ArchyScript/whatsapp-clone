@@ -15,31 +15,30 @@
 </template>
 
 <script setup lang="ts">
-import {   computed, defineProps   } from 'vue'; 
+import { computed, defineProps } from "vue"
 const props = defineProps({
- numberOfStrokes: {
+  numberOfStrokes: {
     type: Number,
-    required: true,
+    required: true
   },
   size: {
     type: String,
-    default: '48',
-  },
+    default: "48"
+  }
 })
 
 const calculateDashOffset = computed(() => {
-  const circumference = 2 * Math.PI * 50;
-  const totalStrokes = props.numberOfStrokes;
-  const strokeGap = 10;
-  const strokeLength = (circumference - strokeGap * (totalStrokes - 1)) / totalStrokes;
-  return circumference - strokeLength - (strokeGap * (totalStrokes - 1));
-});
+  const circumference = 2 * Math.PI * 50
+  const totalStrokes = props.numberOfStrokes
+  const strokeGap = 10
+  const strokeLength = (circumference - strokeGap * (totalStrokes - 1)) / totalStrokes
+  return circumference - strokeLength - strokeGap * (totalStrokes - 1)
+})
 
 const calculateDashArray = computed(() => {
-  const totalStrokes = props.numberOfStrokes;
-  const strokeGap = 10;
-  const strokeLength = (2 * Math.PI * 50 - strokeGap * (totalStrokes - 1)) / totalStrokes;
-  return `${strokeLength} ${strokeGap}`;
-}); 
-
+  const totalStrokes = props.numberOfStrokes
+  const strokeGap = 10
+  const strokeLength = (2 * Math.PI * 50 - strokeGap * (totalStrokes - 1)) / totalStrokes
+  return `${strokeLength} ${strokeGap}`
+})
 </script>
