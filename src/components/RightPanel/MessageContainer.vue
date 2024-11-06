@@ -1,27 +1,13 @@
 <template>
   <div class="relative h-full">
-    <section class="absolute top-0 left-0 w-full h-fit ">
+    <section class="absolute top-0 left-0 w-full h-fit z-10">
       <MessageHeader />
     </section>
 
-    <div class="  chats-content  flex-grow overflow-y-auto">
-      <div class="  bg-red-500 dark:bg-green-800 !p-[40px]">chats content</div>
-      <div class="!p-[40px]">chatrers content</div>
-      <div class="!p-[40px]">chats wefcontent</div>
-      <div class="!p-[40px]">chatsree content</div>
-      <div class="!p-[40px]">chats ewecontent</div>
-      <div class="!p-[40px]">chats ewecontent</div>
-      <div class="!p-[40px]">chats ewecontent</div>
-      <div class="!p-[40px]">chats ewecontent</div>
-
-      <div class="p-10 text-center">
-        <div class="bg-left-panel text-gray-primary dark:bg-chat-background dark:text-green-primary">
-          <p class="p-10">This is light mode text</p>
-        </div>
-
-        <div class="bg-border-light text-gray-secondary-light dark:bg-border-dark dark:text-gray-secondary-dark mt-10">
-          <p class="p-10">This is dark mode text</p>
-        </div>
+    <div class="chats-content flex-grow overflow-y-auto py-20 px-6 space-y-3">
+      <!-- Receiver message -->
+      <div v-for="x in 10" :key="x">
+        <MessageChat />
       </div>
 
       <div class="absolute bottom-0 left-0 w-full">
@@ -31,11 +17,9 @@
   </div>
 </template>
 
-
 <script setup lang="ts">
-import { MessageHeader, MessageFooter } from "@/components/RightPanel" 
+import { MessageHeader, MessageFooter, MessageChat } from "@/components/RightPanel"
 </script>
-
 
 <style scoped>
 .chats-content {

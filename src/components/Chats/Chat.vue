@@ -99,9 +99,9 @@ const selectChat = () => {
       <div class="truncate" v-if="chat.isGroup">
         <!-- for group with community -->
         <div class="flex items-center justify-between truncate" v-if="chat.isCommunity">
-          <span class="text-sm font-medium truncate" title="Sleekware" aria-label="">{{
-            chat.communityName
-          }}</span>
+          <span class="text-sm font-medium truncate" title="Sleekware" aria-label="">
+            {{ chat.communityName }}
+          </span>
           <div class="text-xs text-gray-500">{{ chat.time }}</div>
         </div>
 

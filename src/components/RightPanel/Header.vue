@@ -1,7 +1,7 @@
 <template>
   <header class="flex space-x-3 items-center px-6 py-3 bg-[#202C33]">
     <!-- back button for mobile screen alone -->
-    <div class="p-1.5 pl-2 rounded-full w-10 inline-block md:hidden" role="button ">
+    <div class="p-1.5 pl-2 rounded-full w-10 inline-block md:hidden cursor-pointer" role="button ">
       <Icon name="back" class="text-green-700" @click="showChat" />
     </div>
 
