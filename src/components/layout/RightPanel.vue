@@ -1,13 +1,19 @@
 <template>
   <div class="w-full h-full flex flex-col overflow-auto">
     <!-- <NoChat /> -->
-    <MessageContainer />
+    <Login v-if="!isLoggedIn" />
+
+    <MessageContainer v-else />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { NoChat, MessageContainer } from '@/components/RightPanel'
+import { ref, computed } from "vue"
+import { NoChat, MessageContainer } from "@/components/RightPanel"
+import { useAppStore } from "@/stores/app"
+import { Login } from "@/components/Auth"
+
+const isLoggedIn = computed(() => useAppStore().isLoggedIn)
 
 // import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 // import { Video, X } from 'lucide-vue-next'; // Assuming you're using Lucide Vue

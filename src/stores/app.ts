@@ -8,8 +8,16 @@ export const useAppStore = defineStore("app", () => {
   const activeTab = ref<string | null>("chats")
   const selectedChat = ref<ChatType>()
   const showChat = ref<boolean>(false)
+  const isLoggedIn = ref<boolean>(false)
+  const userData = ref<any>()
 
   // Function to set the active tab
+  const setUserData = (data: any) => {
+    userData.value = data
+  }
+  const setLoginStatus = (value: boolean) => {
+    isLoggedIn.value = value
+  }
   const setActiveTab = (tab: string) => {
     activeTab.value = tab
   }
@@ -26,11 +34,15 @@ export const useAppStore = defineStore("app", () => {
 
   return {
     activeTab,
+    isLoggedIn,
     selectedChat,
     setActiveTab,
     resetActiveTab,
     showChat,
     setShowChat,
-    setSelectedChat
+    setSelectedChat,
+    setLoginStatus,
+    setUserData,
+    userData
   }
 })
