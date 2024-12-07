@@ -79,7 +79,7 @@
 import { ref, computed, onMounted } from "vue"
 import { useAppStore } from "@/stores/app"
 const { setActiveTab } = useAppStore()
-// import { getAuthTest } from '@/infrastructures/api'
+import { getAuthTest } from "@/infrastructures/api"
 const isDarkMode = ref(false)
 
 const activeTab = computed(() => useAppStore().activeTab)
@@ -102,7 +102,8 @@ const sideBarTabs = [
   }
 ]
 
-const selectTab = (tab: string) => {
+const selectTab = async (tab: string) => {
+  await getAuthTest()
   setActiveTab(tab)
 }
 
@@ -111,6 +112,7 @@ const toggleDarkMode = () => {
   document.documentElement.classList.toggle("dark", isDarkMode.value)
 }
 onMounted(() => {
+  // await getAuthTest()
   if (localStorage.getItem("theme") === "dark") {
     isDarkMode.value = true
     document.documentElement.classList.add("dark")
@@ -132,13 +134,13 @@ onMounted(() => {
 // };
 
 // onMounted(async () => {
-//     await getAuthTest()
+//   await getAuthTest()
 
-//     // socket.on('receiveMessage', (data: any) => {
-//     //     console.log('received message:', data)
-//     //     messages.value.push(data); // Add received message to message list
-//     // });
-// });
+//   // socket.on('receiveMessage', (data: any) => {
+//   //     console.log('received message:', data)
+//   //     messages.value.push(data); // Add received message to message list
+//   // });
+// })
 </script>
 
 <style scoped>

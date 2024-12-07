@@ -26,6 +26,7 @@
 
       <Icon name="search-alt" />
       <Icon name="video-call" />
+      <Icon name="notification"/>
       <Icon name="menu" />
     </div>
     <!-- {{ selectedChat }} -->
