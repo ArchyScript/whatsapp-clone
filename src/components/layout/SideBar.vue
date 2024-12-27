@@ -118,29 +118,6 @@ onMounted(() => {
     document.documentElement.classList.add("dark")
   }
 })
-// import { io } from 'socket.io-client';
-
-// const socket = io('http://localhost:5000');
-// const message = ref('');
-// const messages = ref<any[]>([]);
-
-// const sendMessage = () => {
-//     socket.emit('privateMessage', {
-//         senderId: 'user1',
-//         recipientId: 'user2',
-//         message: 'test mea mesage',
-//     });
-//     message.value = '';
-// };
-
-// onMounted(async () => {
-//   await getAuthTest()
-
-//   // socket.on('receiveMessage', (data: any) => {
-//   //     console.log('received message:', data)
-//   //     messages.value.push(data); // Add received message to message list
-//   // });
-// })
 </script>
 
 <style scoped>

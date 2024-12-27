@@ -18,7 +18,29 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed, onMounted } from "vue"
 import { MessageHeader, MessageFooter, MessageChat } from "@/components/RightPanel"
+import { connectSocket, getSocket } from "@/services/socket"
+
+import { io, Socket } from "socket.io-client"
+
+const socket = io("http://localhost:5000")
+
+const message = ref("")
+const messages = ref<any[]>([])
+
+const sendMessage = () => {
+  socket.emit("privateMessage", {
+    senderId: "user1",
+    recipientId: "user2",
+    message: "test mea mesage"
+  })
+  message.value = ""
+}
+
+// onMounted(async () => {
+//   await getAuthTest()
+// })
 </script>
 
 <style scoped>

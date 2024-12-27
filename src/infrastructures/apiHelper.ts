@@ -1,11 +1,11 @@
-import apiClient from '@/config/axiosClient'
-import type { AxiosResponse } from 'axios'
+import apiClient from "@/config/axiosClient"
+import type { AxiosResponse } from "axios"
 
-import { createQueryParam } from '@/utils'
+import { createQueryParam } from "@/utils"
 
 // Generic GET Request
 export const getRequest = async (
-  path: string,
+  path: string
   // params?: Record<string, any>
 ): Promise<AxiosResponse<any>> => {
   // const url = `${path}}`

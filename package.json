@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0  ",
+    "start": "vite --host 0.0.0.0 -- --port 3000",
     "build": "vite build",
     "final build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",

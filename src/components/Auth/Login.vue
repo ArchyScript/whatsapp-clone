@@ -82,15 +82,13 @@ const togglePassword = () => {
 
 // Handle login form submission
 const handleLogin = async () => {
-  if (!form.email || !form.password) {
-    alert("Please fill in all fields.")
-    return
-  }
+  if (!form.email || !form.password) return
   loading.value = true
 
   const response = await login(form)
   loading.value = false
 
+  if (!response) return
   console.log("form", form)
   console.log("response", response)
 

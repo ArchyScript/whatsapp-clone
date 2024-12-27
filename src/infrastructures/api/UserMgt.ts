@@ -17,7 +17,8 @@ export const login = async (payload: LoginRequest) => {
     return response.data
   } catch (error) {
     console.error("Error fetching data:", error)
-    throw error
+    return null
+    // throw error
   }
 }
 
@@ -38,7 +39,7 @@ export const getAuthTest = async () => {
     return response.data
   } catch (error) {
     console.error("Error fetching data:", error)
-    throw error
+    return null
   }
 }
 

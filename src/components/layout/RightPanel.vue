@@ -3,13 +3,15 @@
     <!-- <NoChat /> -->
     <Login v-if="!isLoggedIn" />
 
-    <MessageContainer v-else />
+    <SocketDemo v-else />
+    <!-- <MessageContainer v-else /> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from "vue"
 import { NoChat, MessageContainer } from "@/components/RightPanel"
+import SocketDemo from "@/components/SocketDemo.vue"
 import { useAppStore } from "@/stores/app"
 import { Login } from "@/components/Auth"
 
